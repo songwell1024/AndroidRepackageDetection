@@ -13,6 +13,7 @@
 import xml.etree.ElementTree as ET
 import glob
 import os
+import hashlib
 
 # 遍历所有的节点
 def walkData(root_node, level, result_list):
@@ -68,3 +69,11 @@ def getTreeFromXmlPath(filePath):
                 print("Error: cannot parse file: %s" % anno_xml)
                 wrong_cnt += 1
                 continue
+
+
+#计算字符串的hash值
+def getStrHash(str):
+    md5 = hashlib.md5()
+    md5.update(bytes(str, encoding='utf-8'))
+    return md5.hexdigest()
+
