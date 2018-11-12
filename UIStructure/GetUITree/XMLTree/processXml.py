@@ -37,26 +37,56 @@ def getXmlData(file_name):
     return result_list
 
 
-def getStrXml(file_name):
+def getStrXmlMap(file_name, EleDict):
     StrXml = ""
     level = 1
     for node in getXmlData(file_name):
+        str = node[1]
+        if str.find(".") != -1:
+            str = str.split('.')[-1]
         if level < node[0]:
             level = node[0]
-            StrXml = StrXml + "(" + node[1]
+            StrXml = StrXml + "(" + elementMap(str, EleDict)
         elif level > node[0]:
             for i in range(level - node[0]):
                 StrXml = StrXml + ")"
             level = node[0]
-            StrXml = StrXml + "," + node[1]
+            StrXml = StrXml + "," + elementMap(str, EleDict)
         else:
             if StrXml.strip() != '':
-                StrXml = StrXml + "," + node[1]
+                StrXml = StrXml + "," + elementMap(str, EleDict)
             else:
-                StrXml = node[1]
+                StrXml = elementMap(str, EleDict)
     for i in range(level - 1):
         StrXml = StrXml + ")"
     return StrXml
+
+
+##################################################
+def getStrXml(file_name):
+    StrXml = ""
+    level = 1
+    for node in getXmlData(file_name):
+        str = node[1]
+        if str.find(".") != -1:
+            str = str.split('.')[-1]
+        if level < node[0]:
+            level = node[0]
+            StrXml = StrXml + "(" + str
+        elif level > node[0]:
+            for i in range(level - node[0]):
+                StrXml = StrXml + ")"
+            level = node[0]
+            StrXml = StrXml + "," + str
+        else:
+            if StrXml.strip() != '':
+                StrXml = StrXml + "," + str
+            else:
+                StrXml = str
+    for i in range(level - 1):
+        StrXml = StrXml + ")"
+    return StrXml
+##################################################
 
 def getTreeFromXmlPath(filePath):
     wrong_cnt = 0
@@ -70,6 +100,18 @@ def getTreeFromXmlPath(filePath):
                 wrong_cnt += 1
                 continue
 
+def getMapTreeFromXmlPath(filePath,EleDict):
+    wrong_cnt = 0
+    for anno_xml in glob.glob(os.path.join(filePath, '*')):
+        if anno_xml.endswith('.xml'):
+            try:
+                strXml = getStrXmlMap(anno_xml,EleDict)
+                print(strXml)
+            except Exception as e:
+                print("Error: cannot parse file: %s" % anno_xml)
+                wrong_cnt += 1
+                continue
+
 
 #计算字符串的hash值
 def getStrHash(str):
@@ -77,3 +119,9 @@ def getStrHash(str):
     md5.update(bytes(str, encoding='utf-8'))
     return md5.hexdigest()
 
+# 元素映射
+def elementMap(str, EleDict):
+    if EleDict.get(str) is not None:
+        return EleDict.get(str)
+    else:
+        return "%"

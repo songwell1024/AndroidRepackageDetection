@@ -5,11 +5,12 @@
 @license: (C) Copyright 2013-2018, Node Supply Chain Manager Corporation Limited.
 @contact: songzhiqwer@gmail.com
 @software: garner
-@file: decompileAPK.py.py
+@file: DecompileAPK.py.py
 @time: 2018/11/7/007 15:52
 @desc:
 '''
-
+import datetime
+import time
 import subprocess
 import os
 
@@ -32,19 +33,50 @@ def decompileAPk(apkPath,outputPath,threadNum):
 
         for APK in apklist:
             portion = os.path.splitext(APK)  # 将apk文件按照它们的文件名和后缀做一个分割
-            apkoutPath = os.path.join(category_output, portion[0])  # portion 中 存储的是apk的文件名
+            apkOutpath = os.path.join(category_output, portion[0])  # portion 中 存储的是apk的文件名
             APK = os.path.join(apkPath + "\\" + dirlist[i], APK)
-            if not os.path.exists(apkoutPath):
-               os.makedirs(apkoutPath)
+            if not os.path.exists(apkOutpath):
+               os.makedirs(apkOutpath)
 
-            cmd = "apktool d -f {0} -o {1}".format(APK, apkoutPath)  # 反编译出来apk 之后按照文件名在存储
+            APK = '"' + APK + '"'
+            apkOutpath = '"' + apkOutpath  + '"'
+            cmd = "apktool d -f {0} -o {1}".format(APK, apkOutpath)  # 反编译出来apk 之后按照文件名在存储
             #os.system(cmd)
             #subprocess.run(cmd, shell=True)
             # 开启多个线程执行,
-            child = subprocess.Popen(cmd, shell=True)
+            child = subprocess.Popen(cmd, shell=True, close_fds=True)
             childNum = childNum + 1
+            print("A APk is decompiling")
             if childNum == threadNum:
                 child.wait()
                 childNum = 0
-            print("A APk is decompiled")
-    print("all work done! Happy everyday~")
+    while child.poll() is None:
+        print("please wait~")
+        time.sleep(10)
+    print("All work done! Happy everyday~")
+
+
+# def timeout_command(command, timeout):
+#     start = datetime.datetime.now()
+#     process = subprocess.Popen(command, bufsize=10000, stdout=subprocess.PIPE, close_fds=True)
+#     while process.poll() is None:
+#         time.sleep(0.1)
+#         now = datetime.datetime.now()
+#         if (now - start).seconds > timeout:
+#             try:
+#                 process.terminate()
+#             except Exception as e:
+#                 return None
+#             return None
+#     out = process.communicate()[0]
+#     if process.stdin:
+#         process.stdin.close()
+#     if process.stdout:
+#         process.stdout.close()
+#     if process.stderr:
+#         process.stderr.close()
+#     try:
+#         process.kill()
+#     except OSError:
+#         pass
+#     return out

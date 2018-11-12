@@ -16,7 +16,10 @@ import os
 
 # 遍历所有的节点
 def walkData(root_node, result_list):
-    result_list.append(root_node.tag)
+    str = root_node.tag
+    if str.find(".") != -1:
+        str = str.split('.')[-1]
+    result_list.append(str)
 
     # 遍历每个子节点
     children_node = root_node.getchildren()
@@ -59,3 +62,15 @@ def arrayToDict(EleFrequ, EleArr):
             EleFrequ[str] = EleFrequ[str] + 1
         else:
             EleFrequ[str] = 1
+
+
+#获取出现频率的百分比
+def getElementPer(filePath):
+    strArr = getUIElementFrequency(filePath)
+    sum = 0     #求和
+    res = []  #返回的数组
+    for i in strArr:
+        sum += i[1]
+    for i in strArr:
+        res.append((i[0],i[1] / sum))
+    return res
