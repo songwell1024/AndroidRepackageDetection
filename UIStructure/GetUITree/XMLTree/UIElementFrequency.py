@@ -38,21 +38,30 @@ def getXmlData(file_name):
 
 
 def getUIElementFrequency(filePath):
-    EFrequ = {}
-    wrong_cnt = 0
-    for file_xml in glob.glob(os.path.join(filePath, '*')):
-        if file_xml.endswith('.xml'):
-            try:
-                ArrXml =getXmlData(file_xml)
-                arrayToDict(EFrequ, ArrXml)
-            except Exception as e:
-                print("Error: cannot parse file: %s" % file_xml)
-                wrong_cnt += 1
-                continue
-
-    # 将字典排序
-    EFrequ = sorted(EFrequ.items(), key=lambda item: item[1], reverse=True)
-    return EFrequ
+    dirList = os.listdir(filePath)
+    for i in range(len(dirList)):  # 得到apk 文件夹下的每一个子的类别
+        fileList = filePath + "\\" + dirList[i] + "\\res\\layout" # 获取每个类别的路径
+        elementFrequencyTxt = filePath + "\\" + dirList[i] + "\\"+ "elementFrequency.txt"
+        EFrequ = {}
+        wrong_cnt = 0
+        for file_xml in glob.glob(os.path.join(fileList, '*')):
+            if file_xml.endswith('.xml'):
+                try:
+                    ArrXml =getXmlData(file_xml)
+                    arrayToDict(EFrequ, ArrXml)
+                except Exception as e:
+                    print("Error: cannot parse file: %s" % file_xml)
+                    wrong_cnt += 1
+                    continue
+        # 将字典排序
+        EFreq = sorted(EFrequ.items(), key=lambda item: item[1], reverse=True)
+        EFreqList = getElementPer(EFreq)
+        file_handle = open(elementFrequencyTxt, mode='w')
+        for e in EFreqList:
+            s = ' '.join(e)
+            file_handle.write(s)
+            file_handle.write('\n')
+        file_handle.close()
 
 
 #遍历数组中的元素获取出现的频率
@@ -65,12 +74,11 @@ def arrayToDict(EleFrequ, EleArr):
 
 
 #获取出现频率的百分比
-def getElementPer(filePath):
-    strArr = getUIElementFrequency(filePath)
+def getElementPer(strArr):
     sum = 0     #求和
     res = []  #返回的数组
     for i in strArr:
         sum += i[1]
     for i in strArr:
-        res.append((i[0],i[1] / sum))
+        res.append([i[0],str(i[1] / sum)])
     return res
