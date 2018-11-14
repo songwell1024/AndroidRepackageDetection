@@ -1,8 +1,8 @@
 import XMLTree.ProcessXml as PX
 import XMLTree.UIElementFrequency as UIEF
 import XMLTree.DecompileAPK as DeAPK
-import ElementMappedToCharacter as EMTC
-import EditDistance as ED
+import XMLTree.ElementMappedToCharacter as EMTC
+import XMLTree.EditDistance as ED
 import os
 
 if __name__ == '__main__':

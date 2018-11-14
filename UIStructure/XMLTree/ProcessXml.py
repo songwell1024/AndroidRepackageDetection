@@ -11,7 +11,7 @@
 '''
 
 import xml.etree.ElementTree as ET
-import ElementMappedToCharacter as EMTC
+import XMLTree.ElementMappedToCharacter as EMTC
 import glob
 import os
 import hashlib
