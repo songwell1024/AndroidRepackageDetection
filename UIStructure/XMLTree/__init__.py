@@ -4,6 +4,7 @@ import XMLTree.DecompileAPK as DeAPK
 import XMLTree.ElementMappedToCharacter as EMTC
 import XMLTree.EditDistance as ED
 import os
+import XMLTree.SimilarityCompareByUI as SCBU
 
 if __name__ == '__main__':
 
@@ -31,9 +32,10 @@ if __name__ == '__main__':
     ApkDecompileOutputPath = r'C:\Users\Administrator\Desktop\decompile'   #反编译文件的输出路径
     TxtOutputPath = r'C:\Users\Administrator\Desktop\ApkOutputTxt'    #APK的UI元素对应的TXT的保存目录
 
-    DeAPK.decompileAPk(ApkPath, ApkDecompileOutputPath, 10)      #反编译APK文件
-    UIEF.getUIElementFrequency(ApkDecompileOutputPath)
+    # DeAPK.decompileAPk(ApkPath, ApkDecompileOutputPath, 10)      #反编译APK文件
+    # UIEF.getUIElementFrequency(ApkDecompileOutputPath)
     PX.getMapTreeFromXmlPath(ApkDecompileOutputPath, TxtOutputPath)
+    SCBU.SimilarityCompare(TxtOutputPath)
 
 
 

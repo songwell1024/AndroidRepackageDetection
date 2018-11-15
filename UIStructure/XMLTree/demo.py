@@ -23,5 +23,6 @@ def SimilarityCompare(filePath):
         fileName2 = fileList[1]
 
 
+
 if __name__ == "__main__":
     SimilarityCompare(r'C:\Users\Administrator\Desktop\ApkOutputTxt')

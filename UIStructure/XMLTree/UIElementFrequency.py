@@ -57,6 +57,7 @@ def getUIElementFrequency(filePath):
         EFreq = sorted(EFrequ.items(), key=lambda item: item[1], reverse=True)
         EFreqList = getElementPer(EFreq)
         file_handle = open(elementFrequencyTxt, mode='w')
+        ## 不做预处理直接把映射的特征向量写入text文件
         for e in EFreqList:
             s = ' '.join(e)
             file_handle.write(s)

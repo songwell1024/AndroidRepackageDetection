@@ -90,12 +90,16 @@ def getMapTreeFromXmlPath(filePath,txtOutputPath):
 
 #元素映射写入txt文件中
 def writeElementMapToTxt(filePath,fileName, EleDict):
+    if os.path.exists(fileName):
+        os.remove(fileName)
     wrong_cnt = 0
     for anno_xml in glob.glob(os.path.join(filePath, '*')):
         if anno_xml.endswith('.xml'):
             try:
                 strXml = getStrXmlMap(anno_xml, EleDict)
-                writeToTxt(strXml, fileName)
+                ############过滤掉其中的映射完成之后长度小于5#################
+                if len(strXml) > 5:
+                    writeToTxt(strXml, fileName)
                 # print(strXml)
             except Exception as e:
                 print("Error: cannot parse file: %s" % anno_xml)
