@@ -17,7 +17,7 @@ import os
 # 遍历所有的节点
 def walkData(root_node, result_list):
     str = root_node.tag
-    if str.find(".") != -1:
+    if str.find(".") != -1 and str.find('android.support.') != -1:
         str = str.split('.')[-1]
     result_list.append(str)
 

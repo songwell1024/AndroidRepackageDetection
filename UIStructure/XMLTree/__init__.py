@@ -5,26 +5,12 @@ import XMLTree.ElementMappedToCharacter as EMTC
 import XMLTree.EditDistance as ED
 import os
 import XMLTree.SimilarityCompareByUI as SCBU
+import XMLTree.GetNotMapElementFrequency as GNMEF
 
 if __name__ == '__main__':
 
     # print(PX.getStrHash("abcdefg"))
     # print(PX.getStrHash("abccefg"))
-
-    # print(UIEF.getUIElementFrequency(r'C:\Users\Administrator\Desktop\decompile\talk'
-    #                                  r'\True Love – Find a date Chat and Flirt for free_v2.3_apkpure.com\res\layout'))
-    # print(UIEF.getUIElementFrequency(r'C:\Users\Administrator\Desktop\decompile\talk\whispar_v3.1.1_apkpure.com\res\layout'))
-    # print(UIEF.getElementPer(r'C:\Users\Administrator\Desktop\decompile\talk'
-    #                                  r'\True Love – Find a date Chat and Flirt for free_v2.3_apkpure.com\res\layout'))
-    # EleTup1 = UIEF.getElementPer(r'C:\Users\Administrator\Desktop\decompile\talk'
-    #                                  r'\True Love – Find a date Chat and Flirt for free_v2.3_apkpure.com\res\layout')
-    # print(UIEF.getElementPer(r'C:\Users\Administrator\Desktop\decompile\talk\whispar_v3.1.1_apkpure.com\res\layout'))
-    # EleTup2 = UIEF.getElementPer(r'C:\Users\Administrator\Desktop\decompile\talk\whispar_v3.1.1_apkpure.com\res\layout')
-    #
-    # EleDict = EMTC.getElementDictionary(EleTup1, EleTup2)
-    # print(EleDict)
-    # PX.getTreeFromXmlPath(r'C:\Users\Administrator\Desktop\demoxml')
-    # PX.getMapTreeFromXmlPath(r'C:\Users\Administrator\Desktop\demoxml', r'C:\Users\Administrator\Desktop\ApkOutputTxt', EleDict)
 
     ############全局文件路径的定义##########
 
@@ -34,8 +20,16 @@ if __name__ == '__main__':
 
     # DeAPK.decompileAPk(ApkPath, ApkDecompileOutputPath, 10)      #反编译APK文件
     # UIEF.getUIElementFrequency(ApkDecompileOutputPath)
-    PX.getMapTreeFromXmlPath(ApkDecompileOutputPath, TxtOutputPath)
-    SCBU.SimilarityCompare(TxtOutputPath)
+    # PX.getMapTreeFromXmlPath(ApkDecompileOutputPath, TxtOutputPath)
+    # # SCBU.SimilarityCompare(TxtOutputPath)
+    # GNMEF.remainingElementFrequency(TxtOutputPath)
+    s1 = 'c1(e2, p2, k2, b2(b3(d4, a4)), e2)'
+    s2 = 'c1(e2(p3, k3, b3(b4(d5, a5))), e2)'
+    s11 = 'c(e, p, k, b(b(d, a)), e)'
+    s22 = 'c(e(p, k, b(b(d, a))), e)'
+
+    print(ED.editDistanceSimilarity(s1,s2))
+    print(ED.editDistanceSimilarity(s11,s22))
 
 
 

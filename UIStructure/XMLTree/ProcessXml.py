@@ -18,6 +18,10 @@ import hashlib
 
 # 遍历所有的节点
 def walkData(root_node, level, result_list):
+    key = '{http://schemas.android.com/apk/res/android}visibility'
+    if root_node.attrib.__contains__(key) and (                #过滤掉不可见的点
+            root_node.attrib[key] == 'invisible' or root_node.attrib[key] == 'gone'):
+        return
     temp_list = [level, root_node.tag]
     result_list.append(temp_list)
 
@@ -36,31 +40,6 @@ def getXmlData(file_name):
     root = ET.parse(file_name).getroot()
     walkData(root, level, result_list)
     return result_list
-
-
-def getStrXmlMap(file_name, EleDict):
-    StrXml = ""
-    level = 1
-    for node in getXmlData(file_name):
-        str = node[1]
-        if str.find(".") != -1:
-            str = str.split('.')[-1]
-        if level < node[0]:
-            level = node[0]
-            StrXml = StrXml + "(" + elementMap(str, EleDict)
-        elif level > node[0]:
-            for i in range(level - node[0]):
-                StrXml = StrXml + ")"
-            level = node[0]
-            StrXml = StrXml + "," + elementMap(str, EleDict)
-        else:
-            if StrXml.strip() != '':
-                StrXml = StrXml + "," + elementMap(str, EleDict)
-            else:
-                StrXml = elementMap(str, EleDict)
-    for i in range(level - 1):
-        StrXml = StrXml + ")"
-    return StrXml
 
 
 def getMapTreeFromXmlPath(filePath,txtOutputPath):
@@ -107,6 +86,31 @@ def writeElementMapToTxt(filePath,fileName, EleDict):
                 continue
 
 
+def getStrXmlMap(file_name, EleDict):
+    StrXml = ""
+    level = 1
+    for node in getXmlData(file_name):
+        str = node[1]
+        if str.find(".") != -1 and str.find('android.support.') != -1:
+            str = str.split('.')[-1]
+        if level < node[0]:
+            level = node[0]
+            StrXml = StrXml + "(" + elementMap(str, EleDict)
+        elif level > node[0]:
+            for i in range(level - node[0]):
+                StrXml = StrXml + ")"
+            level = node[0]
+            StrXml = StrXml + "," + elementMap(str, EleDict)
+        else:
+            if StrXml.strip() != '':
+                StrXml = StrXml + "," + elementMap(str, EleDict)
+            else:
+                StrXml = elementMap(str, EleDict)
+    for i in range(level - 1):
+        StrXml = StrXml + ")"
+    return StrXml
+
+
 #计算字符串的hash值
 def getStrHash(str):
     md5 = hashlib.md5()
@@ -118,6 +122,8 @@ def getStrHash(str):
 def elementMap(str, EleDict):
     if EleDict.get(str) is not None:
         return EleDict.get(str)
+    elif (str.find('.') != -1 and str.find('android.support')== -1):
+        return "&"
     else:
         return "%"
 
@@ -143,7 +149,6 @@ def readTextToList(filePath):
     else:
         print("There is no elementFrequency.txt ")
     return res_list
-
 
 
 #####################################################
