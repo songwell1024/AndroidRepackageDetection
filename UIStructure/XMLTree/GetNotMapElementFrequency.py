@@ -32,10 +32,6 @@ def remainingElementFrequency(filePath):
                 length =  length + len(msg)
                 ele_and = ele_and + msg.count('&')
                 ele_per = ele_per + msg.count('%')
-            print(ApkName + ": The frequency of '%' is ",ele_per/length)
-            print(ApkName + ": The frequency of '&' is ",ele_and/length)
-
-
-
-
+            print(ApkName + ": The frequency of '%' is ",float('%.4f' %(ele_per/length)))
+            print(ApkName + ": The frequency of '&' is ",float('%.4f' %(ele_and/length)))
 

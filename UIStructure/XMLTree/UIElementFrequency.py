@@ -81,5 +81,5 @@ def getElementPer(strArr):
     for i in strArr:
         sum += i[1]
     for i in strArr:
-        res.append([i[0],str(i[1] / sum)])
+        res.append([i[0],str(float('%.4f' %(i[1] / sum)))])
     return res
