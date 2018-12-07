@@ -11,16 +11,12 @@
 '''
 import uiautomator2 as u2
 import DynamicUI.DynamicGetUIXml as DGX
-
-
+import DynamicUI.demo as DD
 
 if __name__ == '__main__':
-    # device_id = '71MBBLM2276G'  # 魅族的id
-    # DGX.processAppToGetUIXml(device_id)
-    hashDict = {1 : 'a', 2 : 'b'}
+    device_id = 'WTKDU16629012163'  # 魅族的id
+    DD.processAppToGetUIXml(device_id)
 
-    if hashDict.__contains__(1):
-        print(hashDict[1])
 
 
 

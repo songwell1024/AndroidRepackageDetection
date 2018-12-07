@@ -47,6 +47,8 @@ def getClickableCoordinate(ele_list):
     for e in ele_list:
         if e[2] == 'true':
             coord.append(stringArrayToIntegerArray(e[3]))
+    if coord.__contains__('[0,72][168,240]'):          #一般是左上角的返回键类似于'<----'的，点击之后会返回上一级页面，直接先过滤掉
+        coord.remove('[0,72][168,240]')
     return coord
 
 #字符串转换为整型数组

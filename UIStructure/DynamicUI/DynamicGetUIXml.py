@@ -8,7 +8,12 @@
 @file: DynamicGetUIXml.py
 @time: 2018/11/28/028 9:13
 @desc: 动态的遍历获取应用的xml文件
+需要考虑到的问题
+1.怎么快速的确定当前页面已经遍历过  通过哈希的方式
+2.返回上一级怎么办
+3. 跳转到其他应用怎么办
 '''
+
 import uiautomator2 as u2
 import DynamicUI.GetXmlInformation as GXI
 import os
@@ -17,10 +22,14 @@ import hashlib
 #全局变量xml的存储路径
 filePath  = r'C:\Users\Administrator\Desktop\AppXml'
 
-def processAppToGetUIXml(device_id):
-    xmlHashDict = {}         #存放xml的hash:level的值
+#全局变量
+coordCurPosInArray = {0:0, 1:0, 2:0, 3:0, 4:0}  # 当前页面的坐标遍历到了那个位置
+xmlHashDict = {}  # 存放xml的hash:level的值
+
+def processAppToGetUIXml(device_id,coordCurPosInArray,xmlHashDict):
     index = 0
     d = u2.connect(device_id)
+    d.click(0, 0)  # 点击屏幕上的某一个固定位置，然后打开该应用  或者是通过adb获取当前安装好的应用，然后通过获取包名来执行应用
     appPackage = d.current_app()['package']  # 打印当前界面对应的app的包名和启动的activity（最好是开始就进入mainActivity）
     fileDir = filePath + '\\' + appPackage;
     if not os.path.exists(fileDir):
@@ -31,36 +40,94 @@ def processAppToGetUIXml(device_id):
     xmlHashDict[getStrHash(xml)] = 0   #把xml文件的hash值添加到数组中，初始层为0层
     writeToTxt(xml,fileName)
     clickCoord0 = getClickCoord(fileName)
-    for i in range(clickCoord0.__len__()):
-        d.click(clickCoord0[i][0],clickCoord0[i][1])
-        xml = d.dump_hierarchy()
-        xmlHash = getStrHash(xml)
-        if xmlHashDict.__contains__(xmlHash):
-            if xmlHashDict[xmlHash] > 0:
-                d.press('back')
-        else:
-            if d.current_app()['package'] == appPackage:
-                fileName = fileDir + '\\' + d.current_app()['activity'] + '_' + str(index) + '.xml'
-                writeToTxt(xml,fileName)
-                xmlHashDict[getStrHash(xml)] = 1
-                clickCoord1 = getClickCoord(fileName)
-                for j in range(clickCoord1.__len__()):
-                    d.click(clickCoord0[i][0], clickCoord0[i][1])
-                    xml = d.dump_hierarchy()
-                    xmlHash = getStrHash(xml)
-                    if xmlHashDict.__contains__(xmlHash):
-                        if xmlHashDict[xmlHash] > 0:
-                            d.press('back')
-                    else:
-                        if d.current_app()['package'] == appPackage:
-                            fileName = fileDir + '\\' + d.current_app()['activity'] + '_' + str(index) + '.xml'
-                            writeToTxt(xml, fileName)
-                            xmlHashDict[getStrHash(xml)] = 1
-                            clickCoord2 = getClickCoord(fileName)
-                        else:
-                            d.press('back')
+    for i in range(coordCurPosInArray[0],clickCoord0.__len__()):     #初始层
+        coordCurPosInArray[0] = i + 1;
+        if d.current_app()['package'] == appPackage:
+            d.click(clickCoord0[i][0], clickCoord0[i][1])
+            xml = d.dump_hierarchy()
+            xmlHash = getStrHash(xml)
+            if xmlHashDict.__contains__(xmlHash):
+                while(xmlHashDict[xmlHash] > 0):
+                    d.press('back')
             else:
-                d.press('back')
+                if d.current_app()['package'] == appPackage:
+                    fileName = fileDir + '\\' + d.current_app()['activity'] + '_' + str(index) + '.xml'
+                    index = index + 1;
+                    writeToTxt(xml,fileName)
+                    xmlHashDict[getStrHash(xml)] = 1
+                    clickCoord1 = getClickCoord(fileName)
+                    for j in range(coordCurPosInArray[1],clickCoord1.__len__()):         #第二层
+                        coordCurPosInArray[1] = j + 1
+                        d.click(clickCoord1[j][0], clickCoord1[j][1])
+                        xml = d.dump_hierarchy()
+                        xmlHash = getStrHash(xml)
+                        if xmlHashDict.__contains__(xmlHash):
+                            while xmlHashDict[xmlHash] > 1:
+                                d.press('back')
+                            if xmlHashDict[xmlHash] == 0:
+                                d.click(clickCoord0[i][0],clickCoord0[i][1])
+                        else:
+                            if d.current_app()['package'] == appPackage:
+                                fileName = fileDir + '\\' + d.current_app()['activity'] + '_' + str(index) + '.xml'
+                                index = index + 1
+                                writeToTxt(xml, fileName)
+                                xmlHashDict[getStrHash(xml)] = 2
+                                clickCoord2 = getClickCoord(fileName)
+                                for k in range(coordCurPosInArray[2],clickCoord2.__len__()):    #第三层
+                                    coordCurPosInArray[2] = k + 1
+                                    d.click(clickCoord1[k][0], clickCoord1[k][1])
+                                    xml = d.dump_hierarchy()
+                                    xmlHash = getStrHash(xml)
+                                    if xmlHashDict.__contains__(xmlHash):
+                                        while xmlHashDict[xmlHash] > 2:
+                                            d.press('back')
+                                        if xmlHashDict[xmlHash] == 0:
+                                            d.click(clickCoord0[i][0], clickCoord0[i][1])
+                                            d.click(clickCoord1[j][0], clickCoord0[j][1])
+                                        if xmlHashDict[xmlHash] == 1:
+                                            d.click(clickCoord1[j][0], clickCoord0[j][1])
+                                    else:
+                                        if d.current_app()['package'] == appPackage:
+                                            fileName = fileDir + '\\' + d.current_app()['activity'] + '_' + str(
+                                                index) + '.xml'
+                                            index = index + 1
+                                            writeToTxt(xml, fileName)
+                                            xmlHashDict[getStrHash(xml)] = 3
+                                            clickCoord2 = getClickCoord(fileName)
+                                            for m in range(coordCurPosInArray[3], clickCoord2.__len__()):  # 第四层
+                                                coordCurPosInArray[3] = m + 1
+                                                d.click(clickCoord2[m][0], clickCoord2[m][1])
+                                                xml = d.dump_hierarchy()
+                                                xmlHash = getStrHash(xml)
+                                                if xmlHashDict.__contains__(xmlHash):
+                                                    while xmlHashDict[xmlHash] > 3:
+                                                        d.press('back')
+                                                    if xmlHashDict[xmlHash] == 0:
+                                                        d.click(clickCoord0[i][0], clickCoord0[i][1])
+                                                        d.click(clickCoord1[j][0], clickCoord0[j][1])
+                                                        d.click(clickCoord1[k][0], clickCoord0[k][1])
+                                                    if xmlHashDict[xmlHash] == 1:
+                                                        d.click(clickCoord1[j][0], clickCoord0[j][1])
+                                                        d.click(clickCoord1[k][0], clickCoord0[k][1])
+                                                    if xmlHashDict[xmlHash] == 2:
+                                                        d.click(clickCoord1[k][0], clickCoord0[k][1])
+                                                else:
+                                                    if d.current_app()['package'] == appPackage:
+                                                        fileName = fileDir + '\\' + d.current_app()['activity'] + '_' + str(index) + '.xml'
+                                                        index = index + 1
+                                                        writeToTxt(xml, fileName)
+                                                        d.press('back')
+                                                    else:
+                                                        d.press('back')
+                                        else:
+                                            d.press('back')
+                            else:
+                                d.press('back')
+                else:
+                    d.press('back')
+        else:
+            d.click(0,0)     #在初始层界面就点击退出了当前应用时，要返回当前应用，并且退出之后的那个点的坐标下一个开始遍历
+            processAppToGetUIXml(device_id, coordCurPosInArray, xmlHashDict)
 
 
 #获取设备的信息
@@ -74,9 +141,9 @@ def getDeviceInformation(device_id):
 #写入文件
 def writeToTxt(xml, fileName):
     startStr = '<node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="com.android.systemui"'
-    endStr = '<node index="2" text="" resource-id="com.android.systemui:id/panel_holder" ' \
-             'class="android.widget.FrameLayout" package="com.android.systemui" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" ' \
-             'scrollable="false" long-clickable="false" password="false" selected="false" visible-to-user="true" bounds="[0,0][1080,66]" />\r\n  </node>\r\n'
+    endStr = '<node index="3" text="" resource-id="com.android.systemui:id/scrim_in_front" class="android.view.View" package="com.android.systemui" content-desc="" ' \
+             'checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" ' \
+             'long-clickable="false" password="false" selected="false" visible-to-user="true" bounds="[0,0][1080,72]" />\r\n  </node>\r\n'
 
     xml = xml.replace(xml[xml.find(startStr):(xml.find(endStr) + len(endStr))], '')  # 把手机最上方的电量显示栏去掉
     xml = xml.replace('\r\n', '\r')
@@ -89,7 +156,6 @@ def writeToTxt(xml, fileName):
 #获取点击的坐标
 def getClickCoord(fileName):
     clickCoord = GXI.getClickableCoordinate(GXI.getXmlData(fileName));
-    # d.click(clickCoord[0][0],clickCoord[0][1])
     return clickCoord
 
 #获取xml的信息
