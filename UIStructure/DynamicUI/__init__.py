@@ -14,8 +14,10 @@ import DynamicUI.DynamicGetUIXml as DGX
 import DynamicUI.demo as DD
 
 if __name__ == '__main__':
-    device_id = 'WTKDU16629012163'  # 魅族的id
+    device_id = 'WTKDU16629012163'  # 荣耀的id
     DD.processAppToGetUIXml(device_id)
+    # d = u2.connect(device_id)
+    # xml = d.dump_hierarchy()  # 获取当前界面的xml信息
 
 
 

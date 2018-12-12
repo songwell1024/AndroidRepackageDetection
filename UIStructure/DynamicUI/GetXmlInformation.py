@@ -28,6 +28,8 @@ def walkData(root_node, level, result_list):
         temp_list = [level, root_node.attrib['class']]
         if (root_node.attrib.__contains__('clickable')):
             temp_list.append(root_node.attrib['clickable'])
+        if (root_node.attrib.__contains__('checkable')):
+            temp_list.append(root_node.attrib['checkable'])
         if (root_node.attrib.__contains__('bounds')):
             temp_list.append(root_node.attrib['bounds'])
         result_list.append(temp_list)
@@ -45,10 +47,9 @@ def walkData(root_node, level, result_list):
 def getClickableCoordinate(ele_list):
     coord = []
     for e in ele_list:
-        if e[2] == 'true':
-            coord.append(stringArrayToIntegerArray(e[3]))
-    if coord.__contains__('[0,72][168,240]'):          #一般是左上角的返回键类似于'<----'的，点击之后会返回上一级页面，直接先过滤掉
-        coord.remove('[0,72][168,240]')
+        if e[2] == 'true' and (not e[1].__contains__( 'EditText')) and e[3] == 'false':
+            if e[4]!='[0,72][168,240]':      #一般是左上角的返回键类似于'<----'的，点击之后会返回上一级页面，直接先过滤掉
+                coord.append(stringArrayToIntegerArray(e[4]))
     return coord
 
 #字符串转换为整型数组
@@ -62,11 +63,35 @@ def stringArrayToIntegerArray(s):
     res.append(int(s[1]) + int(abs(int(s[3]) - int(s[1])) / 2));
     return res
 
-#写入文件
-def writeToTxt(str, fileName):
-    f = open(fileName, 'w')
-    f.write(str)  # 这里的\n的意思是在源文件末尾换行，即新加内容另起一行插入。
-    f.close()  # 特别注意文件操作完毕后要close
+
+#xml树映射成字符串
+def getXmlTreeMapToStr(Node_list):
+    StrXml = ""
+    level = 1
+    for node in Node_list:
+        str = node[1]
+        if level < node[0]:
+            level = node[0]
+            StrXml = StrXml + "(" + str
+        elif level > node[0]:
+            for i in range(level - node[0]):
+                StrXml = StrXml + ")"
+            level = node[0]
+            StrXml = StrXml + "," + str
+        else:
+            if StrXml.strip() != '':
+                StrXml = StrXml + "," + str
+            else:
+                StrXml = str
+    for i in range(level - 1):
+        StrXml = StrXml + ")"
+    return StrXml
+
+# #写入文件
+# def writeToTxt(str, fileName):
+#     f = open(fileName, 'w')
+#     f.write(str)  # 这里的\n的意思是在源文件末尾换行，即新加内容另起一行插入。
+#     f.close()  # 特别注意文件操作完毕后要close
 
 if __name__ == '__main__':
     # device_id = '71MBBLM2276G'   # 魅族的id
@@ -81,4 +106,5 @@ if __name__ == '__main__':
 
     # d.click(360/2, 1774 + (1920 - 1774)/2)
     result = getXmlData(fileName)
+    print(getStrXmlMap(fileName))
     print(result)
