@@ -18,7 +18,10 @@ if __name__ == '__main__':
     DD.processAppToGetUIXml(device_id)
     # d = u2.connect(device_id)
     # xml = d.dump_hierarchy()  # 获取当前界面的xml信息
-
+    # print(d.current_app()['package'])
+    # print(xml.__contains__('取消'))
+    #
+    # d(text="取消").click();               #点击取消
 
 
 
