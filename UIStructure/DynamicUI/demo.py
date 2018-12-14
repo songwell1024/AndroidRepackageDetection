@@ -18,6 +18,7 @@ import uiautomator2 as u2
 import DynamicUI.GetXmlInformation as GXI
 import os
 import hashlib
+import time
 
 #全局变量xml的存储路径
 filePath  = r'C:\Users\Administrator\Desktop\AppXml'
@@ -29,6 +30,7 @@ xmlHashDict = {}  # 存放xml的tree:level的值
 def processAppToGetUIXml(device_id):
     index = 0
     d = u2.connect(device_id)
+    d.click_post_delay = 0.5  #    每次点击的等待的时间
     # d.click(0, 0)  # 点击屏幕上的某一个固定位置，然后打开该应用  或者是通过adb获取当前安装好的应用，然后通过获取包名来执行应用
     appPackage = d.current_app()['package']  # 打印当前界面对应的app的包名和启动的activity（最好是开始就进入mainActivity）
     fileDir = filePath + '\\' + appPackage;
@@ -44,9 +46,9 @@ def processAppToGetUIXml(device_id):
     clickCoord0 = getClickCoord(node_list)
     curActivity_0 = d.current_app()['activity']
     for i in range(0,clickCoord0.__len__()):     #初始层
-        if  d.current_app()['package'] == appPackage:
-            while(d.current_app()['activity'] != curActivity_0 and d.current_app()['package'] == appPackage):
-                d.press('back')
+        if d.current_app()['package'] == appPackage:
+            # while(d.current_app()['activity'] != curActivity_0 and d.current_app()['package'] == appPackage):
+            #     d.press('back')
             d.click(clickCoord0[i][0], clickCoord0[i][1])
             xml = d.dump_hierarchy()
             writeToTxt(xml,helpXmlName)
@@ -78,11 +80,10 @@ def processAppToGetUIXml(device_id):
                                         if num < 1:         #如果说点击了返回到了上一层
                                             d.click(clickCoord0[i][0], clickCoord0[i][1])
                                         elif num == 1:
-                                            if  curActivity != d.current_app()['activity']:
+                                            if curActivity != d.current_app()['activity']:
                                                 d.press('back')
                                         else:
-                                            for i_1 in range(1, num):  # 返回当前层
-                                                d.press('back')
+                                            d.press('back')
                                     else:
                                         if d.current_app()['package'] == appPackage:
                                             xmlHashDict[xmlHash] = 2
@@ -90,19 +91,100 @@ def processAppToGetUIXml(device_id):
                                                 index) + '_' + '2' + '.xml'
                                             index = index + 1;
                                             writeToTxt(xml, fileName)
-                                            d.press('back')
+                                            if not d.current_app()['activity'].__contains__('WebViewActivity'):       #第三层
+                                                clickCoord2 = getClickCoord(GXI.getXmlData(fileName))  # 获取当前界面上可点击的元素
+                                                curActivity = d.current_app()['activity'];
+                                                if clickCoord2.__len__() == 0:
+                                                    d.press('back')
+                                                else:
+                                                    for k in range(0, clickCoord2.__len__()):  # 第三层
+                                                        if d.current_app()['package'] == appPackage:
+                                                            d.click(clickCoord2[k][0], clickCoord2[k][1])
+                                                            xml = d.dump_hierarchy()
+                                                            writeToTxt(xml, helpXmlName)
+                                                            xmlHash = getStrHash(GXI.getXmlTreeMapToStr(
+                                                                GXI.getXmlData(helpXmlName)))  # 当前界面对应的布局树的映射
+                                                            if xmlHashDict.__contains__(xmlHash):
+                                                                num = xmlHashDict[xmlHash];
+                                                                if num < 2:  # 如果说点击了返回到了上一层
+                                                                    d.click(clickCoord0[j][0], clickCoord0[j][1])
+                                                                elif num == 2:
+                                                                    if curActivity != d.current_app()['activity']:
+                                                                        d.press('back')
+                                                                else:
+                                                                    d.press('back')
+                                                            else:
+                                                                if d.current_app()['package'] == appPackage:
+                                                                    xmlHashDict[xmlHash] = 3
+                                                                    fileName = fileDir + '\\' + d.current_app()['activity'] + '_' + str(index) + '_' + '3' + '.xml'
+                                                                    index = index + 1;
+                                                                    writeToTxt(xml, fileName)
+                                                                    if not d.current_app()['activity'].__contains__('WebViewActivity'):  # 第四层
+                                                                        clickCoord3 = getClickCoord(GXI.getXmlData(fileName))  # 获取当前界面上可点击的元素
+                                                                        curActivity = d.current_app()['activity'];
+                                                                        if clickCoord3.__len__() == 0:
+                                                                            d.press('back')
+                                                                        else:
+                                                                            for m in range(0,clickCoord3.__len__()):  # 第四层
+                                                                                if d.current_app()[ 'package'] == appPackage:
+                                                                                    d.click(clickCoord3[m][0],clickCoord3[m][1])
+                                                                                    xml = d.dump_hierarchy()
+                                                                                    writeToTxt(xml, helpXmlName)
+                                                                                    xmlHash = getStrHash(GXI.getXmlTreeMapToStr( GXI.getXmlData(helpXmlName)))  # 当前界面对应的布局树的映射
+                                                                                    if xmlHashDict.__contains__(xmlHash):
+                                                                                        num = xmlHashDict[xmlHash];
+                                                                                        if num < 3:  # 如果说点击了返回到了上一层
+                                                                                            d.click(clickCoord0[k][0],clickCoord0[k][1])
+                                                                                        elif num == 3:
+                                                                                            if curActivity !=  d.current_app()['activity']:
+                                                                                                d.press('back')
+                                                                                        else:
+                                                                                                d.press('back')
+                                                                                    else:
+                                                                                        if d.current_app()['package'] == appPackage:
+                                                                                            xmlHashDict[xmlHash] = 4
+                                                                                            fileName = fileDir + '\\' +  d.current_app()['activity'] + '_' + str(
+                                                                                                index) + '_' + '4' + '.xml'
+                                                                                            index = index + 1;
+                                                                                            writeToTxt(xml, fileName)
+                                                                                            d.press('back')
+                                                                                        else:
+                                                                                            pressWhenExitAppToSystem(d, appPackage)
+                                                                                else:
+                                                                                    pressWhenExitAppToSystem(d, appPackage)
+                                                                    else:
+                                                                        if d(text="关闭").exists:
+                                                                            d(text="关闭").click()
+                                                                        elif d(text="退出").exists:
+                                                                            d(text="退出").click()
+                                                                        else:
+                                                                            pressWhenExitAppToSystem(d, appPackage)
+                                                                else:
+                                                                    pressWhenExitAppToSystem(d, appPackage)
+                                                        else:
+                                                            pressWhenExitAppToSystem(d, appPackage)
+                                            else:
+                                                if d(text="关闭").exists:
+                                                    d(text="关闭").click()
+                                                elif d(text="退出").exists:
+                                                    d(text="退出").click()
+                                                else:
+                                                    pressWhenExitAppToSystem(d, appPackage)
                                         else:
-                                            pressWhenExitAppToSystem(d, appPackage, device_id)
-
-                                            #接下来就是第三层的遍历
+                                            pressWhenExitAppToSystem(d, appPackage)
                                 else:
-                                    pressWhenExitAppToSystem(d, appPackage, device_id)
+                                    pressWhenExitAppToSystem(d, appPackage)
                     else:
-                        pressWhenExitAppToSystem(d, appPackage, device_id)
+                        if d(text="关闭").exists:
+                            d(text="关闭").click()
+                        elif d(text="退出").exists:
+                            d(text="退出").click()
+                        else:
+                            pressWhenExitAppToSystem(d, appPackage)
                 else:
-                    pressWhenExitAppToSystem(d, appPackage, device_id)
+                    pressWhenExitAppToSystem(d, appPackage)
         else:
-            pressWhenExitAppToSystem(d, appPackage, device_id)
+            pressWhenExitAppToSystem(d, appPackage)
 
 #获取设备的信息
 def getDeviceInformation(device_id):
@@ -144,14 +226,18 @@ def getStrHash(str):
     return md5.hexdigest()
 
 #当点击应用不小心退出到系统界面或其他应用时
-def pressWhenExitAppToSystem(d,appPackage,device_id):           #d == device
+def pressWhenExitAppToSystem(d,appPackage):           #d == device
     # if d.current_app()['package'] == 'com.huawei.android.launcher':
     if d.current_app()['package'].__contains__('com.huawei.'):
         d.app_start(appPackage)  # 在初始层界面就点击退出了当前应用时，要返回当前应用，并且退出之后的那个点的坐标下一个开始遍历
-        # processAppToGetUIXml(device_id)
+        #为了应用打开时的过滤广告
+        if d(text="跳过").exists:
+            d(text="跳过").click()
     else:
         d.press('back')
 
-def restartApp():
+#重启应用
+def restartApp(d, appPackage):
     d.app_stop(appPackage)
-    d.wait(100)
+    time.sleep(2)
+    pressWhenExitAppToSystem(d, appPackage)

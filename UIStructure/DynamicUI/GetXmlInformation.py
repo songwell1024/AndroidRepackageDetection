@@ -49,7 +49,9 @@ def getClickableCoordinate(ele_list):
     for e in ele_list:
         if e[2] == 'true' and (not e[1].__contains__( 'EditText')) and e[3] == 'false':
             if e[4]!='[0,72][168,240]':      #一般是左上角的返回键类似于'<----'的，点击之后会返回上一级页面，直接先过滤掉
-                coord.append(stringArrayToIntegerArray(e[4]))
+                helpCoord = stringArrayToIntegerArray(e[4]);
+                if helpCoord not in coord:
+                    coord.append(helpCoord)
     return coord
 
 #字符串转换为整型数组
