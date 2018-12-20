@@ -85,7 +85,6 @@ def writeElementMapToTxt(filePath,fileName, EleDict):
                 wrong_cnt += 1
                 continue
 
-
 def getStrXmlMap(file_name, EleDict):
     StrXml = ""
     level = 1
