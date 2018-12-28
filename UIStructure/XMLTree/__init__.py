@@ -19,14 +19,14 @@ if __name__ == '__main__':
     TxtOutputPath = r'C:\Users\Administrator\Desktop\ApkOutputTxt'    #APK的UI元素对应的TXT的保存目录
 
     # DeAPK.decompileAPk(ApkPath, ApkDecompileOutputPath, 10)      #反编译APK文件
-    UIEF.getUIElementFrequency(ApkDecompileOutputPath)
+    # UIEF.getUIElementFrequency(ApkDecompileOutputPath)
     # PX.getMapTreeFromXmlPath(ApkDecompileOutputPath, TxtOutputPath)
     # # SCBU.SimilarityCompare(TxtOutputPath)
-    # GNMEF.remainingElementFrequency(TxtOutputPath)
-    s1 = 'c1(e2, p2, k2, b2(b3(d4, a4)), e2)'
-    s2 = 'c1(e2(p3, k3, b3(b4(d5, a5))), e2)'
-    s11 = 'c(e, p, k, b(b(d, a)), e)'
-    s22 = 'c(e(p, k, b(b(d, a))), e)'
+    GNMEF.remainingElementFrequency(TxtOutputPath)
+    # s1 = 'c1(e2, p2, k2, b2(b3(d4, a4)), e2)'
+    # s2 = 'c1(e2(p3, k3, b3(b4(d5, a5))), e2)'
+    # s11 = 'c(e, p, k, b(b(d, a)), e)'
+    # s22 = 'c(e(p, k, b(b(d, a))), e)'
     # print(ED.editDistanceSimilarity(s1,s2))
     # print(ED.editDistanceSimilarity(s11,s22))
     # print(ED.editDistanceSimilarity(s3,s33))
