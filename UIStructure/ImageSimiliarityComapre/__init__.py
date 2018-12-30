@@ -20,6 +20,6 @@ if __name__ == '__main__':
     # img1 = r'C:\Users\Administrator\Desktop\AppXml\17.jpg'
     # img2 = r'C:\Users\Administrator\Desktop\AppXml\18.jpg'
 
-    # ORB.ORB()
-    AKAZE.AKAZE()
+    ORB.ORB()
+    # AKAZE.AKAZE()
 

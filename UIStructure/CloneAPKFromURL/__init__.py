@@ -7,28 +7,31 @@
 @software: garner
 @file: __init__.py.py
 @time: 2018/12/28/028 21:45
-@desc:
+@desc:  爬取AndroZoo公开的重打包数据集
 '''
 
 import os,shutil
 import urllib
 import requests
 
-def mymovefile(srcfile,fpath):
-
-    if not os.path.exists(fpath):
-        os.makedirs(fpath)                #创建路径
-    shutil.move(srcfile,dstfile)          #移动文件
-
-if __name__ == '__main__':
+def Androzoo():
     index = 0
     f = open(r'C:\Users\Administrator\Desktop\AppXml\app.txt')
     contents = f.readlines()
     for content in contents:
-        str = content.split(',')
+        strs = content.split(',')
+        fpath = r'G:\GraduationProject\APKDataSet' + '\\' + str(index)
+        if not os.path.exists(fpath):
+            os.makedirs(fpath)
+        file_name = fpath + '\\' + strs[0] + '.apk'
+        url = r'https://androzoo.uni.lu/api/download?apikey=62ab45d52429ca7d890b81343b310061a29efe7dff1e4aa9e5507905c62c0315&sha256=' + strs[0]
+        urllib.request.urlretrieve(url, file_name)
+        file_name = fpath + '\\' + strs[1].strip('\n') + '.apk'
+        url = r'https://androzoo.uni.lu/api/download?apikey=62ab45d52429ca7d890b81343b310061a29efe7dff1e4aa9e5507905c62c0315&sha256=' + strs[1]
+        urllib.request.urlretrieve(url, file_name)
+        index = index + 1
+    print("The spider completed")
 
-
-    fpath = r'C:\Users\Administrator\Desktop\AppXml'
-    os.makedirs(fpath)
-    url = r'https://androzoo.uni.lu/api/download?apikey=62ab45d52429ca7d890b81343b310061a29efe7dff1e4aa9e5507905c62c0315&sha256=054D2F61D64389E0073CDF1948EF84B2532CEC807B3286D7257C9A8D1674A6C5'
-    urllib.request.urlretrieve(url, file_path)
+if __name__ == '__main__':
+    # Androzoo()
+    print("complete")

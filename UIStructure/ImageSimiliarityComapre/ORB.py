@@ -16,10 +16,10 @@ from matplotlib import pyplot as plt
 def ORB():
 
     img1 = cv2.imread(r'C:\Users\Administrator\Desktop\AppXml\19.png')
-    img2 = cv2.imread(r'C:\Users\Administrator\Desktop\AppXml\22.png')
+    img2 = cv2.imread(r'C:\Users\Administrator\Desktop\AppXml\20.png')
 
     # 最大特征点数,需要修改，5000太大。
-    orb = cv2.ORB_create(100)
+    orb = cv2.ORB_create(1000)
 
     kp1, des1 = orb.detectAndCompute(img1, None)
     kp2, des2 = orb.detectAndCompute(img2, None)
@@ -42,7 +42,7 @@ def ORB():
     matches = bf.knnMatch(des1, trainDescriptors=des2, k=2)
     good = [m for (m, n) in matches if m.distance < 0.80 * n.distance]
     # # 查看最大匹配点数目
-    print(len(good)/100)
+    print(len(good)/1000)
 
     img3 = cv2.drawMatchesKnn(img1, kp1, img2, kp2, matches,img2, flags=2)
     # cv2.imshow('sp', img3)

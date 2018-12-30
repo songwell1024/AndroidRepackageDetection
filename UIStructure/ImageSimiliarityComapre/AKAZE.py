@@ -16,7 +16,7 @@ from matplotlib import pyplot as plt
 
 def AKAZE():
     im1 = cv2.imread(r'C:\Users\Administrator\Desktop\AppXml\19.png')
-    im2 = cv2.imread(r'C:\Users\Administrator\Desktop\AppXml\22.png')
+    im2 = cv2.imread(r'C:\Users\Administrator\Desktop\AppXml\20.png')
 
 
     # load the image and convert it to grayscale
