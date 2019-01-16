@@ -14,14 +14,17 @@ import StaticMethod.ProcessAndroidManifest as PAM
 import StaticMethod.CalculateImageHash as CIH
 import StaticMethod.AppStaticSimlarity as ASS
 
+import StaticMethod.ImageHashSimilarity as IHS
+
 import datetime
+
 
 if __name__ == '__main__' :
 
-    ApkFilePath = r'C:\Users\Administrator\Desktop\AppXml\dataSEt'
+    ApkFilePath = r'C:\Users\Song\Desktop\dataSEt'
     startTime = datetime.datetime.now()
-    # CIH.SaveDHashValueToTxt(file_path)
+    # CIH.SaveDHashValueToTxt(ApkFilePath)
     # PAM.getAccessorialVectorOfApp(ApkFilePath)
     ASS.readTxtToArrayAndCompareSimilarity(ApkFilePath)
     endTime = datetime.datetime.now()
-    print('执行时间： ' + str((endTime - startTime).microseconds / 10e6) + 's')
+    # print('执行时间： ' + str((endTime - startTime).microseconds / 10e6) + 's')

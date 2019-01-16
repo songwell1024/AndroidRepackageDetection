@@ -19,8 +19,10 @@ import falconn
 
 if __name__ == '__main__':
     device_id = 'WTKDU16629012163'  # 荣耀的id
+
     # DD.processAppToGetUIXml(device_id)
-    # d = u2.connect(device_id)
+    d = u2.connect(device_id)
+    print(d.info)
     # d.click_post_delay  =10     # 每次点击的等待的时间
     # xml = d.dump_hierarchy()  # 获取当前界面的xml信息
     # print(xml.__contains__("关闭"))

@@ -11,28 +11,38 @@
 '''
 import StaticMethod.ImageHashSimilarity as IHS
 import StaticMethod.AccessorialVectorSimilarity as AVS
+import StaticMethod.CompentsAndPermissionSimilarity as CAPS
 import os
 
 
 #从文件中读取并进行相似性的比较
 def readTxtToArrayAndCompareSimilarity(filePath):
-    OutPutSimFile = r'C:\Users\Administrator\Desktop\AppSimTxt\AppSimValue.txt'            # APP的相似性文件
+    OutPutSimFile = r'C:\Users\Song\Desktop\AppSimTxt\AppSimValue.txt'          # APP的相似性文件
     if os.path.exists(OutPutSimFile):
         os.remove(OutPutSimFile)
     file_path_lists = os.listdir(filePath)
     for path in file_path_lists:
         paths = filePath + '\\' + path
         apk_lists = os.listdir(paths)
-        #辅助特征向量相似性
-        vector_fileName1 = paths + '\\' + apk_lists[0] + '\\' + 'AccessorialVector.txt'
-        vector_fileName2 = paths + '\\' + apk_lists[1] + '\\' + 'AccessorialVector.txt'
-        vectorSimVal = AVS.readTxtToArrayAndCompareSimilarity(vector_fileName1,vector_fileName2)
 
-        imgHash_fileName1 = paths + '\\' + apk_lists[0] + '\\' + 'DhashVal.txt'
-        imgHash_fileName2 = paths + '\\' + apk_lists[1] + '\\' + 'DhashVal.txt'
-        imgHashSimVal = IHS.compareImgSimilarity(imgHash_fileName1, imgHash_fileName2)
-        simVal = apk_lists[0] + ', ' + apk_lists[1]+ ':  ' + vectorSimVal +'  ' + imgHashSimVal
-        writeToTxt(simVal,OutPutSimFile)
+        if apk_lists.__len__() >= 2:
+            #辅助特征向量相似性
+            vector_fileName1 = paths + '\\' + apk_lists[0] + '\\' + 'AccessorialVector.txt'
+            vector_fileName2 = paths + '\\' + apk_lists[1] + '\\' + 'AccessorialVector.txt'
+            vectorSimVal = AVS.readTxtToArrayAndCompareSimilarity(vector_fileName1,vector_fileName2)
+
+            #图片资源相似性
+            imgHash_fileName1 = paths + '\\' + apk_lists[0] + '\\' + 'DhashVal.txt'
+            imgHash_fileName2 = paths + '\\' + apk_lists[1] + '\\' + 'DhashVal.txt'
+            imgHashSimVal = IHS.compareImgSimilarity(imgHash_fileName1, imgHash_fileName2)
+
+            #组件和权限相似性
+            CP_fileName1 = paths + '\\' + apk_lists[0] + '\\' + 'AndroidManifest.xml'
+            CP_fileName2 = paths + '\\' + apk_lists[1] + '\\' + 'AndroidManifest.xml'
+            CPSimVal = CAPS.compareSimilarityByComponentsAndPermission(CP_fileName1, CP_fileName2);
+
+            simVal = apk_lists[0] + ', ' + apk_lists[1]+ ':  ' + vectorSimVal +'  ' + imgHashSimVal + ' ' + str(CPSimVal)
+            writeToTxt(simVal,OutPutSimFile)
 
 
 def writeToTxt(str,fileName):

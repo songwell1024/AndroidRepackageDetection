@@ -92,7 +92,10 @@ def MapToVector(EFreq):
     ele = ['uses-permission','permission','activity','receiver','provider','service']
     res = []
     for i in ele:
-        res.append(EFreq[i])
+        if EFreq.__contains__(i):
+            res.append(EFreq[i])
+        else:
+            res.append(0)
     return res
 
 def getFileNumber(filePath):

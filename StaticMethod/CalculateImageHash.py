@@ -24,10 +24,12 @@ def SaveDHashValueToTxt(file_path):
         paths = file_path + '\\' + path
         apk_lists =  os.listdir(paths)
 
-        file_path1 = paths + '\\' + apk_lists[0] + '\\' + 'res'
-        file_path2 = paths + '\\' + apk_lists[1] + '\\' + 'res'
-        getALLImageDHash(file_path1)
-        getALLImageDHash(file_path2)
+        if apk_lists.__len__() >= 2:
+
+            file_path1 = paths + '\\' + apk_lists[0] + '\\' + 'res'
+            file_path2 = paths + '\\' + apk_lists[1] + '\\' + 'res'
+            getALLImageDHash(file_path1)
+            getALLImageDHash(file_path2)
 
 #计算image的差异值哈希并写入文件
 def getALLImageDHash(file_path):
@@ -42,7 +44,8 @@ def getALLImageDHash(file_path):
                     img = Image.open(fileName)
                     dhashVal = imagehash.dhash(img);
                     dhashVal = str(dhashVal)
-                    writeToTxt(dhashVal,DhashValTxt)
+                    if dhashVal!= '0000000000000000':
+                        writeToTxt(dhashVal,DhashValTxt)
 
 def writeToTxt(str,fileName):
     f = open(fileName, 'a')   #打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。

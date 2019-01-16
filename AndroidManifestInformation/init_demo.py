@@ -11,16 +11,10 @@
 '''
 
 import AndroidManifestInformation.ProcessAndroidManifest as PAM
+import AndroidManifestInformation.CompentsAndPermission as CAP
 import XMLTree.DecompileAPK as DeAPK
 import os
 import numpy
-
-
-
-def writeToTxt(str,fileName):
-    f = open(fileName, 'a')
-    f.write(  str +'\n')  # 这里的\n的意思是在源文件末尾换行，即新加内容另起一行插入。
-    f.close()  # 特别注意文件操作完毕后要close
 
 if __name__ == '__main__':
     # # # ApkPath = r'C:\Users\Administrator\Desktop\qqq'  # APK文件的路径
@@ -28,4 +22,6 @@ if __name__ == '__main__':
     # # #
     # # # # DeAPK.decompileAPk(ApkPath, ApkDecompileOutputPath, 10)  # 反编译APK文件
     # PAM.getElementFrequency(ApkDecompileOutputPath)
-    PAM.readTxtToArrayAndCompareSimilarity(r'C:\Users\Administrator\Desktop\AndroidManifestTxt\AndroidManifestTxt.txt')
+    # CAP.getElementFrequency()
+    # print('aaaaa')
+    CAP.getElementFrequency()

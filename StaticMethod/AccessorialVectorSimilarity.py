@@ -61,6 +61,6 @@ def cosSimilarity(arr1, arr2):
         denominator1 += numpy.square(arr1[i])
         denominator2 += numpy.square(arr2[i])
     resSimNum = numerator / (numpy.sqrt(denominator1) * numpy.sqrt(denominator2))
-    resSimNum = Decimal(resSimNum).quantize(Decimal('0.00'))
+    resSimNum = Decimal(resSimNum).quantize(Decimal('0.000'))
     resSimNum = float(resSimNum)
     return resSimNum
