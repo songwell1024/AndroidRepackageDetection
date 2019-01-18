@@ -11,7 +11,7 @@
 '''
 from numpy import *
 
-filename = r'C:\Users\Song\Desktop\AppSimTxt\data.txt'  # 文件目录
+filename = r'C:\Users\Song\Desktop\val2\trainData.txt'  # 文件目录
 
 def loadDataSet():  # 读取数据（这里只有两个特征）
     dataMat = []
@@ -66,8 +66,8 @@ def plotBestFit(weights):  # 画出最终分类的图
     ax = fig.add_subplot(111)
     ax.scatter(xcord1, ycord1, s=30, c='red', marker='s')
     ax.scatter(xcord2, ycord2, s=30, c='green')
-    x = arange(-3.0, 3.0, 0.1)
-    y = (-weights[0] - weights[1] * x) / weights[2]
+    x = arange(0, 1.1, 0.1)
+    y = (-weights[0]-weights[1] * x) / weights[2]
     ax.plot(x, y)
     plt.xlabel('X1')
     plt.ylabel('X2')
@@ -87,9 +87,9 @@ def classifyVector(inX, weights):
 
 # 打开数据集并对数据集进行处理
 def colicTest():
-    frTrain = open('horseColicTraining.txt');
-    frTest = open('horseColicTest.txt')
-    trainingSet = [];
+    frTrain = open(filename)
+    frTest = open(filename)
+    trainingSet = []
     trainingLabels = []
 
     # 获取训练集的数据，并将其存放在list中
@@ -103,7 +103,7 @@ def colicTest():
     trainWeights = stocGradAscent1(array(trainingSet), trainingLabels, 1000)  # 用改进的随机梯度算法计算回归系数
 
     # 计算测试集的错误率
-    errorCount = 0;
+    errorCount = 0
     numTestVec = 0.0
     for line in frTest.readlines():
         numTestVec += 1.0
@@ -121,14 +121,15 @@ def colicTest():
 
 # 调用coicTest函数10次并求平均值
 def multiTest():
-    numTests = 10;
+    numTests = 10
     errorSum = 0.0
     for k in range(numTests):
         errorSum += colicTest()
     print("after %d iterations the average error rate is: %f" % (numTests, errorSum / float(numTests)))
 
 if __name__ == '__main__':
-    dataMat, labelMat = loadDataSet()
-    weights = stocGradAscent1(dataMat, labelMat).getA()
-    plotBestFit(weights)
+    # dataMat, labelMat = loadDataSet()
+    # weights = stocGradAscent1(dataMat, labelMat).getA()
+    # plotBestFit(weights)
+    colicTest()
 
