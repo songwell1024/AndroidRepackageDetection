@@ -35,7 +35,7 @@ def readTxtToArrayAndCompareSimilarity(fileName1,fileName2):
         vectorVal2 = vectorVal2[0].strip('\n')
         vectorArr_2 = strToArr(vectorVal2)
     else:
-        print("There is no such file--" + fileName2)
+        print("There is no such file" + fileName2)
     if vectorVal1.__len__() > 0 and vectorVal2.__len__() > 0 :
         simVal = str(cosSimilarity(vectorArr_1,vectorArr_2))
     return simVal

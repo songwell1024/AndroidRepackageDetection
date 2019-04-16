@@ -18,8 +18,17 @@ def SaveDHashValueToTxt(file_path):
     file_path_lists = os.listdir(file_path)
 
     for path in file_path_lists:
-        app_path = file_path + '\\' + path + '\\' + 'res'
-        getALLImageDHash(app_path)
+        paths = file_path + '\\' + path
+        apk_lists =  os.listdir(paths)
+
+        if apk_lists.__len__() >= 2:
+
+            file_path1 = paths + '\\' + apk_lists[0] + '\\' + 'res'
+            file_path2 = paths + '\\' + apk_lists[1] + '\\' + 'res'
+            getALLImageDHash(file_path1)
+            getALLImageDHash(file_path2)
+        else:
+            print("there is no app list " + apk_lists)  #看下那些文件出问题了
 
 #计算image的差异值哈希并写入文件
 def getALLImageDHash(file_path):

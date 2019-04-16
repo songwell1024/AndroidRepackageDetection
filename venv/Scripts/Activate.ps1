@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="E:\pycharm-workspace\GraduationProject\venv"
+$env:VIRTUAL_ENV="E:\pycharm-workspace\AndroidReapckedDetection\venv"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name

@@ -10,8 +10,8 @@
 @desc: 主函数
 '''
 import uiautomator2 as u2
-import DynamicUI.DynamicGetUIXml as DGX
-import DynamicUI.demo as DD
+# import DynamicUI.DynamicGetUIXml as DGX
+# import DynamicUI.demo as DD
 import time
 import DynamicUI.test as test
 from lshash import lshash

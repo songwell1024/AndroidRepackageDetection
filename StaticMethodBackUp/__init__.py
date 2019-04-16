@@ -13,7 +13,7 @@
 import StaticMethod.ProcessAndroidManifest as PAM
 import StaticMethod.CalculateImageHash as CIH
 import StaticMethod.AppStaticSimlarity as ASS
-import StaticMethodBackUp.DataProcessAndShow as DPAS
+import StaticMethod.DataProcessAndShow as DPAS
 
 import datetime
 
@@ -31,6 +31,6 @@ if __name__ == '__main__' :
     # ASS.readTxtToArrayAndCompareSimilarity(ApkFilePath)  #相似性比较
     # endTime = datetime.datetime.now()
     # print('执行时间： ' + str((endTime - startTime)) + 's')
-    fileName1 = r'C:\Users\Song\Desktop\dataSEt\AppSimValue.txt'
-    fileName2 = r'C:\Users\Song\Desktop\val2\notsim.txt'
-    DPAS.dataPeocessAndShow(fileName1,fileName2)
+    # fileName = r'C:\Users\Song\Desktop\dataSEt\AppSimValue.txt'
+    fileName = r'C:\Users\Song\Desktop\val\2.txt'
+    DPAS.dataPeocessAndShow(fileName)

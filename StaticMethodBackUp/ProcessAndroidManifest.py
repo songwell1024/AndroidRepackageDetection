@@ -37,7 +37,10 @@ def getXmlData(file_name):
 
 #获取文件目录下的所有子文件下的APP的辅助特征向量
 def getAccessorialVectorOfApp(filePath):
-    getElementFrequency(filePath)
+    paths  = os.listdir(filePath)
+    for path in paths:
+        path = filePath +"\\" + path
+        getElementFrequency(path)
 
 #获取APP文件下的向量
 def getElementFrequency(filePath):
@@ -69,6 +72,7 @@ def getElementFrequency(filePath):
         EFreqArr.append(fileCount)
         vecStr = str(EFreqArr)
         writeToTxt(vecStr, vectorFileName)
+        # print(dirList[i] + ":  ", EFreqArr)
 
 
 #遍历数组中的元素获取出现的频率

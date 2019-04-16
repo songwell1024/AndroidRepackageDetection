@@ -6,7 +6,7 @@
 @contact: songzhiqwer@gmail.com
 @software: garner
 @file: DynamicGetUIXml.py
-@time: 2018/11/28/028 9:13
+@time: 2018/03/28 9:13
 @desc: 动态的遍历获取应用的xml文件
 需要考虑到的问题
 1.怎么快速的确定当前页面已经遍历过  通过哈希的方式

@@ -27,11 +27,11 @@ def compareSimilarityByComponentsAndPermission(fileName1, fileName2):
     if os.path.exists(fileName1):
        dict1 = CAP.getElementFrequency(fileName1)
     else:
-        print("There is no such file--" + fileName1)
+        print("There is no such file")
     if os.path.exists(fileName2):
         dict2 = CAP.getElementFrequency(fileName2)
     else:
-        print("There is no such file--" + fileName2)
+        print("There is no such file")
     if dict1.__len__() > 0 and dict2.__len__() > 0:
         for key in dict1.keys():
             if dict2.__contains__(key) and dict2[key] == dict1[key]:

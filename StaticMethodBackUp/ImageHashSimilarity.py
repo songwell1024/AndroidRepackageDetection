@@ -20,16 +20,16 @@ def compareImgSimilarity(fileName1, fileName2):
     DHashVal2 = []
     if os.path.exists(fileName1):
         f = open(fileName1)
-        DHashVal1 = f.readlines()
+        DHashVal1 = f.readlines();
         f.close()
     else:
-        print("There is no such file--" + fileName1)  #看下出问题的文件夹
+        print("There is no such file " + fileName1)  #看下出问题的文件夹
     if os.path.exists(fileName2):
         f = open(fileName2)
-        DHashVal2 = f.readlines()
+        DHashVal2 = f.readlines();
         f.close()
     else:
-        print("There is no such file--" + fileName2)
+        print("There is no such file " + fileName2)
     nx = []
     edge = {}
     cx = {}
