@@ -13,7 +13,6 @@ import numpy as np
 from decimal import Decimal
 import matplotlib.pyplot as plt
 from numpy import *
-from mpl_toolkits.mplot3d import Axes3D
 
 
 def calculateWeight(fileName):
@@ -125,8 +124,6 @@ def calculateWeight(fileName):
 
 
     return threshold, weight, omissiveJudgementRate, minMisdiagnosisRate
-
-
 
 
 if __name__ == "__main__":
