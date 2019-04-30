@@ -17,9 +17,9 @@ import hashlib
 import time
 
 
-filePath  = r'C:\Users\Administrator\Desktop\AppXml'
+filePath  = r'C:\Users\Song\Desktop\AppXml'
 def test(device_id):
-    index = 0;
+    index = 0
     d = u2.connect(device_id)
     appPackage = d.current_app()['package']  # 打印当前界面对应的app的包名和启动的activity（最好是开始就进入mainActivity）
     fileDir = filePath + '\\' + appPackage;

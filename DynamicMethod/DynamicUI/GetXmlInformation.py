@@ -49,7 +49,7 @@ def getClickableCoordinate(ele_list):
     for e in ele_list:
         if e[2] == 'true' and (not e[1].__contains__( 'EditText')) and e[3] == 'false':
             # if e[4]!='[0,72][168,240]':      #一般是左上角的返回键类似于'<----'的，点击之后会返回上一级页面，直接先过滤掉
-            helpCoord = stringArrayToIntegerArray(e[4]);
+            helpCoord = stringArrayToIntegerArray(e[4])
             if not (helpCoord[0]>= 0 and helpCoord[0] <= 170 and helpCoord[1]>= 70 and helpCoord[1]<= 240):
                 if helpCoord not in coord:
                     coord.append(helpCoord)
@@ -62,8 +62,8 @@ def stringArrayToIntegerArray(s):
     s = s.replace("]", " ")
     s = s.replace(",", " ")
     s = s.split(" ")
-    res.append(int(s[0]) + int(abs(int(s[2]) - int(s[0])) / 2));
-    res.append(int(s[1]) + int(abs(int(s[3]) - int(s[1])) / 2));
+    res.append(int(s[0]) + int(abs(int(s[2]) - int(s[0])) / 2))
+    res.append(int(s[1]) + int(abs(int(s[3]) - int(s[1])) / 2))
     return res
 
 
@@ -95,19 +95,3 @@ def getXmlTreeMapToStr(Node_list):
 #     f = open(fileName, 'w')
 #     f.write(str)  # 这里的\n的意思是在源文件末尾换行，即新加内容另起一行插入。
 #     f.close()  # 特别注意文件操作完毕后要close
-
-if __name__ == '__main__':
-    # device_id = '71MBBLM2276G'   # 魅族的id
-    # d = u2.connect(device_id) # alias for u2.connect_usb('123456f')
-    # print(d.info)
-    # print(d.device_info)
-    # xml = d.dump_hierarchy()
-    # print(xml)
-    # print(d.current_app())
-    fileName = r'C:\Users\Administrator\Desktop\AndroidManifestTxt\demo.xml';
-    # # writeToTxt('aaa', fileName)
-
-    # d.click(360/2, 1774 + (1920 - 1774)/2)
-    result = getXmlData(fileName)
-    # print(getStrXmlMap(fileName))
-    print(result)

@@ -16,7 +16,7 @@ from decimal import Decimal
 def getSimilarityByAcs(s,t):
     m = s.__len__()
     n = t.__len__()
-    res = [[0] * (n ) for i in range(m)]
+    res = [[0] * (n) for i in range(m)]
     help_index = 0
     for i in range(0, m ):
         for j in range(0, n):
@@ -37,7 +37,7 @@ def getNumberOfCommonDistinctSubsequences(arr_s, arr_t):
         numSequence[i][0] = 1
     for j in range(0, n+1 ):
         numSequence[0][j] = 1
-    numSequence[0][0] = 0;
+    numSequence[0][0] = 0
     #计算矩阵的过程
     for i in range(1,m +1):
         for j in range(1, n+1):
@@ -52,50 +52,23 @@ def getNumberOfCommonDistinctSubsequences(arr_s, arr_t):
 def L(str_array, letter, index):
     if index < 0:
         return 0
-    maxRes = 0;
+    maxRes = 0
     for i in range(0,index + 1):
-        if str_array[i] == letter:
-            maxRes = i;
-    return maxRes;
+        if str_array[i] ==  letter:    # 在这里做了元素的比较 也就值字符串的比较
+            maxRes = i
+    return maxRes
 
 
-
-# 所有公共子序列
-# def getNumofCommonSubstr(str1, str2):
-#     lstr1 = len(str1)
-#     lstr2 = len(str2)
-#     record = [[0 for i in range(lstr2 + 1)] for j in range(lstr1 + 1)]  # 多一位
-#     maxNum = 0  # 最长匹配长度
-#     max_end = 0  # 匹配的终止
-#     max_start=0 #匹配的起始位
-#     map_maxStr={}#key为开始位置，value为最大匹配字符串
-#     for i in range(lstr1):
-#         for j in range(lstr2):
-#             if str1[i] == str2[j]:
-#                 # 相同则累加
-#                 record[i + 1][j + 1] = record[i][j] + 1
-#                 if record[i + 1][j + 1] > maxNum:
-#
-#                     # 获取最大匹配长度
-#                     maxNum = record[i + 1][j + 1]
-#                     # 记录最大匹配长度的开始位置
-#
-#                     p= i + 1
-#                     max_start=i+1 - maxNum
-#                     map_maxStr[max_start]=str1[p - maxNum:p]
-#                     maxNum=0
-#     # return str1[p - maxNum:p], maxNum
-#     return map_maxStr
-
-
-# map_maxStr = {}
-# map_maxStr = ACS.getNumofCommonSubstr(s1, s2)  # 返回匹配字符串
-# for m in map_maxStr:
-#     print(map_maxStr.get(m))
-#
-# map_maxStr = ACS.getNumofCommonSubstr(s22, s11)  # 返回匹配字符串
-# for m in map_maxStr:
-#     print(map_maxStr.get(m))
-
-
-
+##比较树中一个元素是否相等，布局结构 + 布局属性
+def ElementEqual(element1, element2):
+    ele1 = element1.split(':')
+    ele2 = element2.split(':')
+    index = 0
+    if ele1[0] == ele2[0]:
+        for i in range(1, ele1.__len__()):
+          if ele1[i] == ele2[i]:
+              index = index + 1
+    if index > ((ele1.__len__() -1) * 0.5):
+        return True
+    else:
+        return False

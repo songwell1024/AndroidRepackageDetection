@@ -19,9 +19,12 @@ import DynamicMethod.DynamicUI.test as test
 # import falconn
 
 if __name__ == '__main__':
-    device_id = 'WTKDU16629012163'  # 荣耀的id
+    # device_id = 'WTKDU16629012163'  # 荣耀的id
+    # test.test(device_id)
+    ele1 =  {1,2,3,4,5}
+    print(ele1.__len__())
 
-    DD.processAppToGetUIXml(device_id)
+    # DD.processAppToGetUIXml(device_id)
     # d = u2.connect(device_id)
     # print(d.info)
     # d.click_post_delay  =10     # 每次点击的等待的时间
@@ -35,6 +38,8 @@ if __name__ == '__main__':
     # d.app_start(appPackage)  # 在初始层界面就点击退出了当前应用时，要返回当前应用，并且退出之后的那个点的坐标下一个开始遍历
     # d.healthcheck()    #检查并维持设备端守护进程处于运行状态
     # test.test(device_id)  #测试当前界面的输出的
+
+
 
 
 

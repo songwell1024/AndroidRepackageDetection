@@ -13,9 +13,7 @@ DTW：动态时间归整
 该算法是用来比较树的相似度的
 '''
 
-import DynamicMethod.DTW_ACS.GetTreePath as GTP
 import DynamicMethod.DTW_ACS.ACS as ACS
-from decimal import Decimal
 import DynamicMethod.DTW_ACS.dtwAcs as dtwAcs
 
 # import XMLTree.EditDistance as ED
@@ -38,8 +36,8 @@ if __name__ == '__main__' :
 
 
 
-    # s = [['a','b'],['a','d','c'],['a','d','d'],['a','c']]
-    # t = [['a','b'],['a','c','d'],['a','c','c'],['a','d']]
+    s = [['a','b'],['a','d','c'],['a','d','d'],['a','c']]
+    t = [['a','b'],['a','c','d'],['a','c','c'],['a','d']]
     #
     # ss = [['a', 'b'], ['a', 'b', 'c'], ['a', 'b', 'd', 'e']]
     # tt = [['a', 'b','b'], ['a', 'b', 'c','d','e']]
@@ -60,7 +58,7 @@ if __name__ == '__main__' :
     # sssssss = [['c', 'e'], ['c', 'p'], ['c', 'k'],['c','b','b','d'],['c','b','b','d','a']]
     # ttttttt = [['c', 'e', 'p'], ['c', 'e', 'k'], ['c', 'e', 'b','b','d'], ['c','e','b','b', 'a'],['c','e']]
     # # print(ACS.getSimilarityByAcs(ss,tt))
-    # print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(s, t)))
+    print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(s, t)))
     # print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(ss,tt)))
     # print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(sss, ttt)))
     # print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(ssss,tttt)))

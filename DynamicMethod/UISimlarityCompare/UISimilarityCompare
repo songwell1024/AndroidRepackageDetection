@@ -1,0 +1,12 @@
+import DynamicMethod.DTW_ACS.ACS as ACS
+import DynamicMethod.DTW_ACS.dtwAcs as dtwAcs
+import DynamicMethod.UISimlarityCompare.GetTreePath as GTP
+
+if __name__ == '__main__':
+    ## 这两棵树的相似度怎么是1 ？？？？？？
+    ## 是有问题吧，怎么解决呢 ？？？
+    ## 应该是错的，再看看论文
+    s = [['a','c'],['a','d','c'],['a','d','d'],['a','c']]
+    t = [['a','c'],['a','c','d'],['a','c','c'],['a','d']]
+    print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(s,t)))
+    GTP.getAllSubPathOfTree()
