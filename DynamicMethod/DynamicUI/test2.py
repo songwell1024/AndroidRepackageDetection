@@ -7,10 +7,12 @@
 @license: (C) Copyright 2013-2018, Node Supply Chain Manager Corporation Limited.
 @contact: songzhiqwer@gmail.com
 @software: garner
-@file: __init__.py.py
+@file: test.py
 @time: 2018/11/22/022 10:07
 @desc: 主函数
 '''
+
+
 import uiautomator2 as u2
 import DynamicMethod.DynamicUI.DynamicGetUIXml as DGX
 import DynamicMethod.DynamicUI.demo as DD

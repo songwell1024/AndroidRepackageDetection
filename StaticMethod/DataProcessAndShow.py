@@ -7,57 +7,71 @@
 @software: garner
 @file: DataProcessAndShow.py
 @time: 2019/1/15 10:18
-@desc:
+@desc: 数据展示
 '''
 
 from numpy import *
 import matplotlib.pyplot as plt
 import os
 
-def dataPeocessAndShow(fileName):
+def dataPeocessAndShow(fileName1,fileName2):
     xcord1 = []
     ycord1 = []
-    xcord2 = []
-    ycord2 = []
-    if os.path.exists(fileName):
-        f = open(fileName)
+    if os.path.exists(fileName1):
+        f = open(fileName1)
         valList = f.readlines()
         f.close()
-        i= 1
         for val in  valList:
             val = val.strip('\n')
             strList = val.split(' ')
-            # if strList[strList.__len__() - 1] != "10" and strList[strList.__len__() - 2] != "10":
+            if strList[strList.__len__() - 1] != "10" and strList[strList.__len__() - 2] != "10":
+                xcord1.append(float(strList[strList.__len__() - 1]))   #compent
+                ycord1.append(float(strList[strList.__len__() - 2]))   #image
+    xcord2 = []
+    ycord2 = []
+    if os.path.exists(fileName2):
+        f = open(fileName2)
+        valList = f.readlines()
+        f.close()
+        for val in valList:
+            val = val.strip('\n')
+            strList = val.split(' ')
             if strList[strList.__len__() - 1] != "none" and strList[strList.__len__() - 2] != "none":
-                ycord1.append(float(strList[strList.__len__() - 1]))
-                xcord1.append(i)
-                ycord2.append(float(strList[strList.__len__() - 2]))
-                xcord2.append(i)
-                i = i + 1
-        #组件的图
-        fig = plt.figure()
-        # ax = fig.add_subplot(131)
-        ax = fig.add_subplot(111)
-        # ax.scatter(xcord1, ycord1, s=1, c='red', marker='s')
-        ax.scatter(xcord1, ycord1, s=1, c='red')
-        plt.xlabel('CompPerm')
-        plt.ylabel('CompPerm')
-        plt.show()
-
-        #资源哈希的图
-        fig = plt.figure()
-        ax = fig.add_subplot(111)
-        ax.scatter(xcord2, ycord2, s=1, c='red')
-        plt.xlabel('imghash')
-        plt.ylabel('imghash')
-        plt.show()
+                xcord2.append(float(strList[strList.__len__() - 1]))       ##compent
+                ycord2.append(float(strList[strList.__len__() - 2]))       #image
 
         # 资源哈希和组件的组
         fig = plt.figure()
         ax = fig.add_subplot(111)
-        ax.scatter(ycord1, ycord2, s=1, c='red')
-        plt.xlabel('CompPerm')
-        plt.ylabel('imghash')
+        ax.scatter(ycord1, xcord1, s=10, c='red', marker='*')
+        ax.scatter(ycord2, xcord2, s=10, c='green',marker='s')
+        plt.xlabel('imghash')
+        plt.ylabel('CompPerm')
         plt.show()
+
+        # 组件的图
+        le1 = xcord1.__len__()
+        y1 = []
+        for i in range(le1):
+            y1.append(i)
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        ax.scatter(y1, xcord1, s=2, c='red')
+        plt.xlabel('APP')
+        plt.ylabel('CompPerm')
+        plt.show()
+
+        # 资源哈希的图
+        le2 = ycord1.__len__()
+        y2 = []
+        for i in range(le2):
+            y2.append(i)
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        ax.scatter(y2, ycord1,s=2, c='red')
+        plt.xlabel('APP')
+        plt.ylabel('Iamge Hash')
+        plt.show()
+
     else:
         print("There is no such file ")

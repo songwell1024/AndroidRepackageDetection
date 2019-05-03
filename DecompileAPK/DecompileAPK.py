@@ -5,11 +5,11 @@
 @license: (C) Copyright 2013-2018, Node Supply Chain Manager Corporation Limited.
 @contact: songzhiqwer@gmail.com
 @software: garner
-@file: __init__.py.py
+@file: DecompileAPk.py
 @time: 2018/12/30/030 9:56
-@desc:
+@desc: 批量反编译
 '''
-import datetime
+
 import time
 import subprocess
 import os

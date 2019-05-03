@@ -10,6 +10,7 @@
 @desc:
 所有公共子序列
 '''
+
 import math
 from decimal import Decimal
 
@@ -21,14 +22,13 @@ def getSimilarityByAcs(s,t):
     for i in range(0, m ):
         for j in range(0, n):
             help_index = getNumberOfCommonDistinctSubsequences(s[i], t[j]) / \
-                        (math.sqrt(getNumberOfCommonDistinctSubsequences(s[i], s[i]) * getNumberOfCommonDistinctSubsequences(t[j], t[j])))
+                    (math.sqrt(getNumberOfCommonDistinctSubsequences(s[i], s[i]) * getNumberOfCommonDistinctSubsequences(t[j], t[j])))
             help_index = Decimal(help_index).quantize(Decimal('0.00'))
             res[i][j] = float(help_index)
+    print(res)
     return res
 
 def getNumberOfCommonDistinctSubsequences(arr_s, arr_t):
-    # arr_s = s_str.split()
-    # arr_t = t_str.split()
     m = arr_s.__len__()
     n = arr_t.__len__()
     #初始化
@@ -37,38 +37,41 @@ def getNumberOfCommonDistinctSubsequences(arr_s, arr_t):
         numSequence[i][0] = 1
     for j in range(0, n+1 ):
         numSequence[0][j] = 1
-    numSequence[0][0] = 0
+    numSequence[0][0] = 1
     #计算矩阵的过程
     for i in range(1,m +1):
         for j in range(1, n+1):
-            if L(arr_t,arr_s[i-1],j-1) == 0:
+            if L(arr_t,arr_s[i-1],j) == 0:
                 numSequence[i][j] = numSequence[i-1][j]
-            elif L(arr_t,arr_s[i-1],j-1) > 0 and L(arr_s,arr_s[i-1],i-1-1) == 0:
-                numSequence[i][j] = numSequence[i - 1][j] + numSequence[i - 1][L(arr_t,arr_s[i-1],j-1)]
-            elif L(arr_t,arr_s[i-1],j-1) > 0 and L(arr_s,arr_s[i-1],i-1-1) > 0:
-                numSequence[i][j] = numSequence[i - 1][j] + numSequence[i - 1][L(arr_t, arr_s[i-1], j-1)] - numSequence[L(arr_s,arr_s[i-1],i-1-1) - 1][L(arr_t,arr_s[i-1],j-1)]
-    return numSequence[m][n]
+            elif L(arr_t,arr_s[i-1],j) > 0 and L(arr_s,arr_s[i-1],i-1) == 0:
+                numSequence[i][j] = numSequence[i - 1][j] + numSequence[i - 1][L(arr_t,arr_s[i-1],j) - 1]
+            elif L(arr_t,arr_s[i-1],j) > 0 and L(arr_s,arr_s[i-1],i-1) > 0:
+                numSequence[i][j] = numSequence[i - 1][j] + numSequence[i - 1][L(arr_t, arr_s[i-1], j) - 1] - numSequence[L(arr_s,arr_s[i-1],i-1) - 1][L(arr_t,arr_s[i-1],j) - 1]
+    return numSequence[m][n] - 1
+
 
 def L(str_array, letter, index):
     if index < 0:
         return 0
     maxRes = 0
-    for i in range(0,index + 1):
+    for i in range(0,index):
         if str_array[i] ==  letter:    # 在这里做了元素的比较 也就值字符串的比较
-            maxRes = i
+            maxRes = i + 1
     return maxRes
 
 
-##比较树中一个元素是否相等，布局结构 + 布局属性
+#元素比较的问题
 def ElementEqual(element1, element2):
     ele1 = element1.split(':')
     ele2 = element2.split(':')
-    index = 0
-    if ele1[0] == ele2[0]:
+    index = 1
+    if (ele1[0].__contains__('.') and ele2[0].__contains__('.') and ele1[0].split('.')[-1] == ele2[0].split('.')[-1]) \
+            or (ele1[0] == ele2[0]):  ##布局一样才比较布局的属性
         for i in range(1, ele1.__len__()):
-          if ele1[i] == ele2[i]:
-              index = index + 1
-    if index > ((ele1.__len__() -1) * 0.5):
-        return True
-    else:
+            index = index + 1
+        if index  >= ele1.__len__() * 0.5:     #有超过一半的元素相等就可以判定为相等，当然这里还可以修改
+            return True
+        else:
+            return False
+    else:         ## 布局不相同时直接不比较，判定为不同的元素
         return False

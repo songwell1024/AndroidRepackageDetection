@@ -1,4 +1,14 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# encoding: utf-8
+'''
+@author: WilsonSong
+@license: (C) Copyright 2013-2017, Node Supply Chain Manager Corporation Limited.
+@contact: songzhiqwer@gmail.com
+@software: garner
+@file: CalculateWeight.py
+@time: 2019/3/18 15:01
+@desc: 分类方法
+'''
 import numpy as np
 import sklearn.metrics as metrics
 import matplotlib as mpl

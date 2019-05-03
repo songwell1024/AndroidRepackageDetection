@@ -47,13 +47,3 @@ class HungarianAlgorithm():
                         M.append((u, v))
                         return 1
         return 0
-
-
-# if __name__ == '__main__':
-#     nx, ny = ['A', 'B', 'A', 'D'], ['E', 'F', 'G']
-#     edge = {'A': {'E': 1, 'F': 0, 'G': 0}, 'B': {'E': 0, 'F': 1, 'G': 0},
-#             'A': {'E': 1, 'F': 0, 'G': 0}, 'D': {'E': 0, 'F': 0, 'G': 0}}  # 1 表示可以匹配， 0 表示不能匹配
-#     cx, cy = {'A': -1, 'B': -1, 'A': -1,'D': -1}, {'E': -1, 'F': -1, 'G': -1}
-#     visited = {'E': 0, 'F': 0, 'G': 0}
-#
-#     print(HungarianAlgorithm(nx, ny, edge, cx, cy, visited).max_match())

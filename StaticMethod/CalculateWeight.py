@@ -9,7 +9,7 @@
 @time: 2019/1/18 15:01
 @desc: 初级检测权重的确定
 '''
-import numpy as np
+
 from decimal import Decimal
 import matplotlib.pyplot as plt
 from numpy import *
@@ -107,21 +107,6 @@ def calculateWeight(fileName):
     y = (threshold - weight * x) / (1-weight)
     ax.plot(x, y)
     plt.show()
-
-    # xcord4 = []
-    # ycord4 = []
-    # zcord4 = []
-    # for i in range(omissiveJudgementRates.__len__()):
-    #     xcord4.append(weightsAndthresholdsArray[i][0])
-    #     ycord4.append(weightsAndthresholdsArray[i][1])
-    #     zcord4.append(omissiveJudgementRates[i])
-    # fig = plt.figure()
-    # ax = Axes3D(fig)
-    # # ax = fig.add_subplot(111)
-    # ax.plot_surface(xcord4, ycord4, zcord4, rstride=1, cstride=1, cmap='rainbow')  # 绘面
-    # plt.show()
-
-
 
     return threshold, weight, omissiveJudgementRate, minMisdiagnosisRate
 

@@ -96,8 +96,3 @@ def removeLastIntegerNumber(node_str):
             break
     node_str = ''.join([str(x) for x in list_str])
     return node_str
-
-if __name__ == '__main__':
-    # # filename = r'C:\Users\Song\Desktop\AppXml\com.mydream.wifi\com.wifibanlv.wifipartner.activity.MainActivity_0_0.xml'
-    filename = r'C:\Users\Song\Desktop\AppXml\com.mydream.wifi\test.xml'
-    print(getAllSubPathOfTree(filename))

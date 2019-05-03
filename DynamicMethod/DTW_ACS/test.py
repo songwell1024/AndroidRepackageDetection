@@ -5,7 +5,7 @@
 @license: (C) Copyright 2013-2018, Node Supply Chain Manager Corporation Limited.
 @contact: songzhiqwer@gmail.com
 @software: garner
-@file: __init__.py.py
+@file: test.py.py
 @time: 2018/12/20/020 16:02
 @desc:
 ACS: 所有公共子序列
@@ -15,6 +15,7 @@ DTW：动态时间归整
 
 import DynamicMethod.DTW_ACS.ACS as ACS
 import DynamicMethod.DTW_ACS.dtwAcs as dtwAcs
+import math
 
 # import XMLTree.EditDistance as ED
 
@@ -25,7 +26,6 @@ if __name__ == '__main__' :
     #
     #
     # print(GTP.getAllSubPathOfTree(file_name))
-    print("aaa")
     # print(GTP.getAllSubPathOfTree(file_name))
     # print(GTP.getAllSubPathOfTree(file_name))
 
@@ -36,8 +36,32 @@ if __name__ == '__main__' :
 
 
 
-    s = [['a','b'],['a','d','c'],['a','d','d'],['a','c']]
-    t = [['a','b'],['a','c','d'],['a','c','c'],['a','d']]
+    s = [['a','b'],['a','d','c'],['a','d','d'],['a','d','d','d']]
+
+
+    # t = [['a','b'],['a','c','d'],['a','c','c'],['a','d']]
+    # t = [['a', 's'], ['a', 'd', 'c'], ['a', 'd', 'd'], ['a','d','d','d']]
+
+    # s= [['a','b'],['a','d','c'],['a','d','d'],['a','c']]
+    # t = [['a','b'],['a','d','5'],['6','7','8'],['9','10'],['11','12'],['13','14']]
+    # t = [['a', 'c'], ['a', 'd', 'd'], ['a', 'd', 'd'], ['a', 'c']]
+
+    sss = [['a', 'b','c'], ['a', 'd', 'e'], ['a', 'g', 'd'],['a', 'b','c']]
+    ttt = [['a', 'b', 'c'], ['a', 'd', 'e'], ['a', 'g', 'd']]
+    editence =  dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(sss, ttt))    #树的距离
+    print(editence)
+    print((max(sss.__len__(),ttt .__len__()) - editence) / max(sss.__len__(),ttt .__len__()))   #树的相似度
+    print(math.exp(-editence))
+
+    # i =0
+    # while(i < 3):
+    #     print(math.exp(-i))
+    #     i = i + 0.1
+
+
+
+
+
     #
     # ss = [['a', 'b'], ['a', 'b', 'c'], ['a', 'b', 'd', 'e']]
     # tt = [['a', 'b','b'], ['a', 'b', 'c','d','e']]
@@ -58,7 +82,7 @@ if __name__ == '__main__' :
     # sssssss = [['c', 'e'], ['c', 'p'], ['c', 'k'],['c','b','b','d'],['c','b','b','d','a']]
     # ttttttt = [['c', 'e', 'p'], ['c', 'e', 'k'], ['c', 'e', 'b','b','d'], ['c','e','b','b', 'a'],['c','e']]
     # # print(ACS.getSimilarityByAcs(ss,tt))
-    print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(s, t)))
+    # print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(s, t)))
     # print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(ss,tt)))
     # print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(sss, ttt)))
     # print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(ssss,tttt)))

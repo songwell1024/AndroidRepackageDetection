@@ -16,10 +16,10 @@ from decimal import Decimal
 
 #组件和权限比较相似性
 def compareSimilarityByComponentsAndPermission(fileName1, fileName2):
-    identical = 0;
-    similar = 0;
+    identical = 0
+    similar = 0
     new = 0;
-    deleted = 0;
+    deleted = 0
     dict1 = {}
     dict2 = {}
     similarity = "none"

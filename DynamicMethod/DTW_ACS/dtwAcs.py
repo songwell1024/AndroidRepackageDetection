@@ -7,11 +7,11 @@
 @software: garner
 @file: dtwAcs.py
 @time: 2018/12/25/025 9:57
-@desc:
+@desc: DTW_ACS
 '''
-import math
+
+
 from decimal import Decimal
-import numpy
 
 def DTW_ACS(arr_acs):
     m = arr_acs.__len__()
@@ -34,12 +34,4 @@ def DTW_ACS(arr_acs):
         for j in  range(1, n+1):
             help_index = min(dtw_acs[i][j-1], dtw_acs[i-1][j], dtw_acs[i-1][j-1]) + theta[i-1][j-1]
             dtw_acs[i][j] = float(Decimal(help_index).quantize(Decimal('0.00')))
-    # # return dtw_acs[m][n]
-
-    for i in range(m+1):
-        dtw_acs[i][0] = 0   #无穷大
-    for j in range(n+1):
-        dtw_acs[0][j] = 0
-
-    # return dtw_acs
-    return dtw_acs[m][n]/numpy.max(dtw_acs)
+    return dtw_acs[m][n]

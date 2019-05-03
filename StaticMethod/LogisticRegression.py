@@ -99,7 +99,7 @@ def colicTest():
         for i in range(2):  # 这里的range(21)是为了循环每一列的值，总共有22列
             lineArr.append(float(currLine[i]))
         trainingSet.append(lineArr)
-        trainingLabels.append(float(currLine[21]))
+        trainingLabels.append(float(currLine[2]))
     trainWeights = stocGradAscent1(array(trainingSet), trainingLabels, 1000)  # 用改进的随机梯度算法计算回归系数
 
     # 计算测试集的错误率

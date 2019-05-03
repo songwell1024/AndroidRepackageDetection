@@ -1,12 +1,32 @@
 import DynamicMethod.DTW_ACS.ACS as ACS
 import DynamicMethod.DTW_ACS.dtwAcs as dtwAcs
 import DynamicMethod.UISimlarityCompare.GetTreePath as GTP
+import os
+
+
+#两两比较的方式，存储的方式
+#先获取到file_path下的目录下的所有文件夹，每个文件夹下存储的是要比较的两个应用的xml文件
+def UISimilarityCompare(file_path):
+    file_path_lists = os.listdir(file_path)
+    for path in file_path_lists:
+        app_paths = os.listdir(file_path + '\\' + path)
+        xml_paths1 = file_path + '\\' + path +'\\' + app_paths[0]
+        xml_paths2 = file_path + '\\' + path + '\\' + app_paths[1]
+        xml_list1 = os.listdir(xml_paths1)
+        xml_list2 = os.listdir(xml_paths2)
+        for xml1 in xml_list1:
+            xmlFileName1 = xml_paths1 + '\\' + xml1
+            for xml2 in xml_list2:
+                xmlFileName2 = xml_paths2 + '\\' + xml2
+                ## 下面应该是基于匈牙利算法的比较
+                print(xmlFileName1, xmlFileName2)
+
+
 
 if __name__ == '__main__':
-    ## 这两棵树的相似度怎么是1 ？？？？？？
-    ## 是有问题吧，怎么解决呢 ？？？
-    ## 应该是错的，再看看论文
-    s = [['a','c'],['a','d','c'],['a','d','d'],['a','c']]
-    t = [['a','c'],['a','c','d'],['a','c','c'],['a','d']]
-    print(dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(s,t)))
-    GTP.getAllSubPathOfTree()
+    # # filename = r'C:\Users\Song\Desktop\AppXml\com.mydream.wifi\com.wifibanlv.wifipartner.activity.MainActivity_0_0.xml'
+    # filename = r'C:\Users\Song\Desktop\AppXml\com.mydream.wifi\test.xml'
+    # treePath = GTP.getAllSubPathOfTree(filename)
+    # print(treePath)
+    file_path = r'C:\Users\Song\Desktop\AppXml'
+    UISimilarityCompare(file_path)
