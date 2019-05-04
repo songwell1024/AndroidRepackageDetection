@@ -12,6 +12,7 @@
 
 import xml.etree.ElementTree as ET
 from treelib import Node, Tree
+import os
 
 index_node = 0
 
@@ -59,10 +60,13 @@ def getAllSubPathOfTree(file_name):
         for path in paths:
             path_list.append(removeLastIntegerNumber(path))
         treePaths_list.append(path_list)
-     ## 这里要处理include的属性
-    return treePaths_list
+    ## 这里要处理include的属性
+    filePath = os.path.dirname(os.path.realpath(file_name))  #获取当前文件所在文件夹
+    resTreePaths_list = addIncludeXMlTree(treePaths_list, filePath)
+    print(treePaths_list)
+    return resTreePaths_list
 
-#移除树节点id中我添加的整数index
+#移除树节点id中添加的整数index
 def removeLastIntegerNumber(node_str):
     list_str = list(node_str)
     for i in range(node_str.__len__() -1, -1, -1):
@@ -74,9 +78,21 @@ def removeLastIntegerNumber(node_str):
     return node_str
 
 
-##处理包含在xml中的include中的属性
-def addIncludeXMlTree(treePaths_list):
-    for treePath in treePaths_list.__len__():
-        for i in  treePath.__len__():
-            if treePath[i].__contains__('include'):
-                IncludeXMLFileName = treePath[i].split('/')[1]
+##处理包含在xml中的include中的属性,也就是一个xml文件中可能包含很多的其他的xml文件中的内容
+##这里的意思可能就是每一个Android应用可能包含很多的公共的布局属性，供使用
+def addIncludeXMlTree(treePaths_list, filePath):
+    resTreePathsList = []
+    for treePath in treePaths_list:
+        if treePath[treePath.__len__()-1].__contains__('include'):
+            IncludeXMLFileName = filePath + "\\" + treePath[treePath.__len__()-1].split('/')[1] + '.xml'
+            includeTreePaths = getAllSubPathOfTree(IncludeXMLFileName)
+            for itp in  includeTreePaths:
+                help = []
+                for i in  range(treePath.__len__()-1):
+                    help.append(treePath[i])
+                for j in itp:
+                    help.append(j)
+                resTreePathsList.append(help)
+        else:
+            resTreePathsList.append(treePath)
+    return resTreePathsList
