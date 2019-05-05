@@ -20,6 +20,10 @@ def SaveDHashValueToTxt(file_path):
     for path in file_path_lists:
         app_path = file_path + '\\' + path + '\\' + 'res'
         getALLImageDHash(app_path)
+        # try:
+        #     getALLImageDHash(app_path)
+        # except:
+        #     print("calculate image hash error in CalculateImageHash: " +  app_path)
 
 #计算image的差异值哈希并写入文件
 def getALLImageDHash(file_path):
@@ -28,14 +32,17 @@ def getALLImageDHash(file_path):
         os.remove(DhashValTxt)
     for path, dir, fileList in os.walk(file_path):
         for fileName in  fileList:
-            if fileName.endswith('jpg') or fileName.endswith('.png'):
+            if fileName.endswith('.jpg') or fileName.endswith('.png'):
                 fileName = path + '\\' + fileName
-                if os.path.getsize(fileName) > 800:
+                if os.path.getsize(fileName) > 700:
                     img = Image.open(fileName)
-                    dhashVal = imagehash.dhash(img);
-                    dhashVal = str(dhashVal)
-                    if dhashVal!= '0000000000000000':
-                        writeToTxt(dhashVal,DhashValTxt)
+                    try:
+                        dhashVal = imagehash.dhash(img)
+                        dhashVal = str(dhashVal)
+                        if dhashVal != '0000000000000000':
+                            writeToTxt(dhashVal, DhashValTxt)
+                    except:
+                        print("image hash error: " + fileName)
 
 def writeToTxt(str,fileName):
     f = open(fileName, 'a')   #打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。

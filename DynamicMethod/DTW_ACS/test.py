@@ -45,9 +45,11 @@ if __name__ == '__main__' :
     # s= [['a','b'],['a','d','c'],['a','d','d'],['a','c']]
     # t = [['a','b'],['a','d','5'],['6','7','8'],['9','10'],['11','12'],['13','14']]
     # t = [['a', 'c'], ['a', 'd', 'd'], ['a', 'd', 'd'], ['a', 'c']]
-
-    sss = [['a', 'b','c'], ['a', 'd', 'e'], ['a', 'g', 'd'],['a', 'b','c']]
-    ttt = [['a', 'b', 'c'], ['a', 'd', 'e'], ['a', 'g', 'd']]
+    #
+    # sss = [['a', 'b','c'], ['a', 'd', 'e'], ['a', 'g', 'd'],['a', 'b','c']]
+    # ttt = [['a', 'b', 'c'], ['a', 'd', 'e'], ['a', 'g', 'd']]
+    sss = [['a'], [ 'd']]
+    ttt = [['a'], [ 'g']]
     editence =  dtwAcs.DTW_ACS(ACS.getSimilarityByAcs(sss, ttt))    #树的距离
     print(editence)
     print((max(sss.__len__(),ttt .__len__()) - editence) / max(sss.__len__(),ttt .__len__()))   #树的相似度

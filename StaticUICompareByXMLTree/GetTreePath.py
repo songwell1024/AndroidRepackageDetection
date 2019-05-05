@@ -63,7 +63,7 @@ def getAllSubPathOfTree(file_name):
     ## 这里要处理include的属性
     filePath = os.path.dirname(os.path.realpath(file_name))  #获取当前文件所在文件夹
     resTreePaths_list = addIncludeXMlTree(treePaths_list, filePath)
-    print(treePaths_list)
+    # print(treePaths_list)
     return resTreePaths_list
 
 #移除树节点id中添加的整数index

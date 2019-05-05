@@ -18,7 +18,7 @@ from decimal import Decimal
 def compareSimilarityByComponentsAndPermission(fileName1, fileName2):
     identical = 0
     similar = 0
-    new = 0;
+    new = 0
     deleted = 0
     dict1 = {}
     dict2 = {}
@@ -35,13 +35,13 @@ def compareSimilarityByComponentsAndPermission(fileName1, fileName2):
     if dict1.__len__() > 0 and dict2.__len__() > 0:
         for key in dict1.keys():
             if dict2.__contains__(key) and dict2[key] == dict1[key]:
-                identical = identical + 1;
+                identical = identical + 1
                 del dict2[key]
             elif dict2.__contains__(key) and dict2[key] != dict1[key]:
                 similar = similar + 1
                 del dict2[key]
             elif not dict2.__contains__(key):
-                deleted = deleted + 1;
+                deleted = deleted + 1
 
         new = dict2.__len__()
 

@@ -25,7 +25,6 @@ def getSimilarityByAcs(s,t):
                     (math.sqrt(getNumberOfCommonDistinctSubsequences(s[i], s[i]) * getNumberOfCommonDistinctSubsequences(t[j], t[j])))
             help_index = Decimal(help_index).quantize(Decimal('0.00'))
             res[i][j] = float(help_index)
-    print(res)
     return res
 
 def getNumberOfCommonDistinctSubsequences(arr_s, arr_t):

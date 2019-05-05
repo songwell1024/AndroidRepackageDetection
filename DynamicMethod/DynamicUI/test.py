@@ -52,6 +52,6 @@ def writeToTxt(xml, fileName):
     f.close()  # 特别注意文件操作完毕后要close
 
 def getClickCoord(node_list):
-    clickCoord = GXI.getClickableCoordinate(node_list);
+    clickCoord = GXI.getClickableCoordinate(node_list)
     return clickCoord
 

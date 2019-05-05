@@ -21,8 +21,8 @@ import DynamicMethod.DynamicUI.test as test
 # import falconn
 
 if __name__ == '__main__':
-    # device_id = 'WTKDU16629012163'  # 荣耀的id
-    # test.test(device_id)
+    device_id = 'WTKDU16629012163'  # 荣耀的id
+    test.test(device_id)
     ele1 =  {1,2,3,4,5}
     print(ele1.__len__())
 

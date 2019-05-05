@@ -30,12 +30,17 @@ def readTxtToArrayAndCompareSimilarity(filePath):
 
             #图片资源相似性
             imgHash_fileName2 = filePath + '\\' + file_path_lists[j] + '\\' +'DhashVal.txt'
-            imgHashSimVal = IHS.compareImgSimilarity(imgHash_fileName1, imgHash_fileName2)
+            try:
+                imgHashSimVal = IHS.compareImgSimilarity(imgHash_fileName1, imgHash_fileName2)
+            except:
+                print("compare image similarity error in readTxtToArrayAndCompareSimilarity: " + imgHash_fileName2)
 
             #组件和权限相似性
             CP_fileName2 = filePath + '\\' + file_path_lists[j] + '\\' +'AndroidManifest.xml'
-            CPSimVal = CAPS.compareSimilarityByComponentsAndPermission(CP_fileName1, CP_fileName2);
-
+            try:
+                CPSimVal = CAPS.compareSimilarityByComponentsAndPermission(CP_fileName1, CP_fileName2);
+            except:
+                print("compare similarity by components and permission error in readTxtToArrayAndCompareSimilarity : " + CP_fileName2)
             simVal = file_path_lists[i] + ', ' + file_path_lists[j]+ ': ' + imgHashSimVal + ' ' + str(CPSimVal)
             if x <= 200000:
                 OutPutSimFile = r'C:\Users\Song\Desktop\AppSimTxt' + '\\' + str(y) + ".txt"
