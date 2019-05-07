@@ -21,12 +21,11 @@ def writeToTxt(str,fileName):
 
 if __name__ == '__main__' :
 
-    print('ddedddd')
 
-    ApkFilePath = r'C:\Users\Song\Desktop\aaaaaaaaa'  # 数据集文件
+    ApkFilePath = r'C:\Users\Song\Desktop\aaaa'  # 数据集文件
     # # OutPutSimFile = r'C:\Users\Song\Desktop\AppSimTxt\AppSimValue.txt'  # APP的相似性文件
     # startTime = datetime.datetime.now()
-    CIH.SaveDHashValueToTxt(ApkFilePath)   #计算感知哈希
+    CIH.SavePHashValueToTxt(ApkFilePath)   #计算感知哈希
     # # ASS.readTxtToArrayAndCompareSimilarity(ApkFilePath, OutPutSimFile)  #相似性比较
     # ASS.readTxtToArrayAndCompareSimilarity(ApkFilePath)  #相似性比较
     # endTime = datetime.datetime.now()

@@ -14,7 +14,7 @@ import imagehash
 from PIL import Image
 
 #将资源文件的感知哈希写入文件
-def SaveDHashValueToTxt(file_path):
+def SavePHashValueToTxt(file_path):
     file_path_lists = os.listdir(file_path)
 
     for path in file_path_lists:
@@ -34,13 +34,13 @@ def getALLImageDHash(file_path):
         for fileName in  fileList:
             if fileName.endswith('.jpg') or fileName.endswith('.png'):
                 fileName = path + '\\' + fileName
-                if os.path.getsize(fileName) > 700:
+                if os.path.getsize(fileName) > 750:
                     img = Image.open(fileName)
                     try:
-                        dhashVal = imagehash.dhash(img)
-                        dhashVal = str(dhashVal)
-                        if dhashVal != '0000000000000000':
-                            writeToTxt(dhashVal, DhashValTxt)
+                        phashVal = imagehash.phash(img)
+                        phashVal = str(phashVal)
+                        if phashVal != '0000000000000000':
+                            writeToTxt(phashVal, DhashValTxt)
                     except:
                         print("image hash error: " + fileName)
 

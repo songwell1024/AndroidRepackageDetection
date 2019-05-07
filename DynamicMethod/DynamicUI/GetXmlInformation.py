@@ -57,7 +57,7 @@ def getClickableCoordinate(ele_list):
 
 #字符串转换为整型数组
 def stringArrayToIntegerArray(s):
-    res = [];
+    res = []
     s = s.replace("[", "")
     s = s.replace("]", " ")
     s = s.replace(",", " ")
@@ -89,9 +89,3 @@ def getXmlTreeMapToStr(Node_list):
     for i in range(level - 1):
         StrXml = StrXml + ")"
     return StrXml
-
-# #写入文件
-# def writeToTxt(str, fileName):
-#     f = open(fileName, 'w')
-#     f.write(str)  # 这里的\n的意思是在源文件末尾换行，即新加内容另起一行插入。
-#     f.close()  # 特别注意文件操作完毕后要close
