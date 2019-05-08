@@ -63,6 +63,8 @@ def copyAndMove(inPath, outPath):
     for path in filePathLists:
         DhashValFileName = inPath + '\\' + path + '\\' + 'DhashVal.txt'
         AndroidManifestFileName = inPath + '\\' + path + '\\' + 'AndroidManifest.xml'
+        MANIFESTFileName = inPath + '\\' + path + '\\' + r'original\META-INF\MANIFEST.MF'
+
         outAppPath = os.path.join(outPath, path)
         if not os.path.exists(outAppPath):
             os.makedirs(outAppPath)
@@ -74,11 +76,15 @@ def copyAndMove(inPath, outPath):
             shutil.copy(AndroidManifestFileName, outAppPath)
         except:
             print("there is no such file:" + AndroidManifestFileName)
+        try:
+            shutil.copy(MANIFESTFileName, outAppPath)
+        except:
+            print("there is no such file:" + AndroidManifestFileName)
         res_layout = inPath + '\\' + path + '\\' + "res" + "\\" + "layout"
         copytree(res_layout, outAppPath + '\\' + "res" + "\\" + "layout")
 
 
 if __name__ == '__main__':
-    inPath = r'C:\Users\Song\Desktop\APPVal'
+    inPath = r'C:\Users\Song\Desktop\Aaaaaaaaaaaa'
     outPath = r'C:\Users\Song\Desktop\APPPath'
     copyAndMove(inPath, outPath)

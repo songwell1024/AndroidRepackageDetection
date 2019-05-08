@@ -68,6 +68,8 @@ def compareImgSimilarity(fileName1, fileName2):
 
         #四舍五入
         simRes =str(float(Decimal(simRes).quantize(Decimal('0.000'))))
+    else:
+        simRes = 1     #如果没有任何的资源文件直接判定为可疑重打包应用
     return str(simRes)
 
 
