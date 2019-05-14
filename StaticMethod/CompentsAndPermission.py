@@ -18,13 +18,13 @@ def walkData(root_node, result_dict):
     if str == "uses-permission" or str == "uses-feature" or str == "permission":        #官方权限
         key = '{http://schemas.android.com/apk/res/android}name'
         if root_node.attrib.__contains__(key):
-            value = root_node.attrib[key];
-            newKey = root_node.tag + ":" + value;
+            value = root_node.attrib[key]
+            newKey = root_node.tag + ":" + value
             result_dict[newKey] = "none"
     elif str == "activity" or str == "receiver" or str == "provider" or str == "service":     #自定义权限
         key = '{http://schemas.android.com/apk/res/android}name'
         if root_node.attrib.__contains__(key):
-            value = root_node.attrib[key];
+            value = root_node.attrib[key]
             newKey = root_node.tag + ":" + value;
             children_node = root_node.getchildren()
             newVal = ""
@@ -67,5 +67,10 @@ def writeToTxt(str,fileName):
     f = open(fileName, 'a')
     f.write(  str +'\n')  # 这里的\n的意思是在源文件末尾换行，即新加内容另起一行插入。
     f.close()  # 特别注意文件操作完毕后要close
+
+if __name__ =='__main__':
+    filename = r'C:\Users\Song\Desktop\Desktop\qqq\me.ele\AndroidManifest.xml '
+    getXmlData(filename)
+
 
 

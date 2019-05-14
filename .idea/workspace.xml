@@ -11,30 +11,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StaticMethod/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-              <folding>
-                <element signature="e#257#303#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StaticMethod/AppStaticSimlarity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1075">
-              <caret line="45" column="91" selection-start-line="45" selection-start-column="91" selection-end-line="45" selection-end-column="91" />
-              <folding>
-                <element signature="e#273#319#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StaticMethod/ImageHashSimilarity.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1275">
@@ -42,15 +18,6 @@
               <folding>
                 <element signature="e#275#284#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Util/GetAPPSize.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1375">
-              <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -68,52 +35,70 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StaticMethod/CalculateImageHash.py">
+        <entry file="file://$PROJECT_DIR$/StaticMethod/DataProcessAndShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1075">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="875">
+              <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
               <folding>
-                <element signature="e#286#295#0" expanded="true" />
+                <element signature="e#265#284#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Util/GetImageNumber.py">
+        <entry file="file://$PROJECT_DIR$/StaticMethod/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="30" selection-end-line="80" selection-end-column="46" />
+            <state relative-caret-position="750">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
-                <element signature="e#286#295#0" expanded="true" />
+                <element signature="e#257#303#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/StaticMethod/CompentsAndPermission.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="825">
+              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Util/StatisticsSimilarityScope.py">
+        <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+            <state relative-caret-position="204">
+              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+              <folding>
+                <element signature="e#250#275#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StaticMethod/LogisticRegression.py">
+        <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/test2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2525">
-              <caret line="101" column="46" selection-start-line="101" selection-start-column="46" selection-end-line="101" selection-end-column="46" />
+            <state relative-caret-position="150">
+              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+              <folding>
+                <element signature="e#258#283#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StaticMethod/HungarianAlgorithm.py">
+        <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+            <state relative-caret-position="625">
+              <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+              <folding>
+                <element signature="e#339#364#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,7 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/StaticMethod/CompentsAndPermission.py" />
         <option value="$PROJECT_DIR$/StaticMethod/ProcessAndroidManifest.py" />
         <option value="$PROJECT_DIR$/StaticMethod/AccessorialVectorSimilarity.py" />
         <option value="$PROJECT_DIR$/StaticMethod/LRTrainDataProcess.py" />
@@ -157,7 +141,6 @@
         <option value="$PROJECT_DIR$/StaticMethod/HungarianAlgorithm.py" />
         <option value="$PROJECT_DIR$/StaticMethod/LogisticRegression.py" />
         <option value="$PROJECT_DIR$/StaticMethod/CalculateWeight.py" />
-        <option value="$PROJECT_DIR$/StaticMethod/DataProcessAndShow.py" />
         <option value="$PROJECT_DIR$/DynamicMethod/LogisticRegression.py" />
         <option value="$PROJECT_DIR$/StaticUICompareByXMLTree/test.py" />
         <option value="$PROJECT_DIR$/DynamicMethod/DTW_ACS/test.py" />
@@ -172,8 +155,6 @@
         <option value="$PROJECT_DIR$/DynamicMethod/UISimlarityCompare/UISimilarityCompare" />
         <option value="$PROJECT_DIR$/DynamicMethod/UISimlarityCompare/UISimilarityCompareByXMLTree" />
         <option value="$PROJECT_DIR$/DynamicMethod/DynamicUI/GetXmlInformation.py" />
-        <option value="$PROJECT_DIR$/DynamicMethod/DynamicUI/test2.py" />
-        <option value="$PROJECT_DIR$/StaticMethod/__init__.py" />
         <option value="$PROJECT_DIR$/StaticMethod/CalculateImageHash.py" />
         <option value="$PROJECT_DIR$/Util/GetAPPSize.py" />
         <option value="$PROJECT_DIR$/StaticMethod/CompareByMa.py" />
@@ -182,6 +163,10 @@
         <option value="$PROJECT_DIR$/StaticMethod/CompareByMANIFEST.py" />
         <option value="$PROJECT_DIR$/Util/GetImageNumber.py" />
         <option value="$PROJECT_DIR$/Util/StatisticsSimilarityScope.py" />
+        <option value="$PROJECT_DIR$/StaticMethod/CompentsAndPermission.py" />
+        <option value="$PROJECT_DIR$/StaticMethod/__init__.py" />
+        <option value="$PROJECT_DIR$/StaticMethod/DataProcessAndShow.py" />
+        <option value="$PROJECT_DIR$/DynamicMethod/DynamicUI/test2.py" />
       </list>
     </option>
   </component>
@@ -196,12 +181,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="AndroidReapckedDetection" type="b2602c69:ProjectViewProjectNode" />
               <item name="AndroidReapckedDetection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidReapckedDetection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidReapckedDetection" type="462c0819:PsiDirectoryNode" />
+              <item name="DynamicMethod" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidReapckedDetection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidReapckedDetection" type="462c0819:PsiDirectoryNode" />
+              <item name="DynamicMethod" type="462c0819:PsiDirectoryNode" />
+              <item name="DynamicUI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AndroidReapckedDetection" type="b2602c69:ProjectViewProjectNode" />
@@ -217,7 +214,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,8 +244,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.StatisticsSimilarityScope">
-    <configuration name="AppImportantFileCopyAndMove" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.test2">
+    <configuration name="CompentsAndPermission" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AndroidReapckedDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -261,7 +257,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StaticMethod/AppImportantFileCopyAndMove.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StaticMethod/CompentsAndPermission.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -270,7 +266,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CompareByMANIFEST" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="DataProcessAndShow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AndroidReapckedDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -282,49 +278,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StaticMethod/CompareByMANIFEST.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="GetAPPSize" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AndroidReapckedDetection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Util" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/GetAPPSize.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="GetImageNumber" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AndroidReapckedDetection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Util" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/GetImageNumber.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StaticMethod/DataProcessAndShow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -354,13 +308,55 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AndroidReapckedDetection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/StaticMethod" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StaticMethod/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AndroidReapckedDetection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DynamicMethod/DynamicUI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DynamicMethod/DynamicUI/test2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test2" />
+        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.DataProcessAndShow" />
         <item itemvalue="Python.StatisticsSimilarityScope" />
-        <item itemvalue="Python.GetImageNumber" />
-        <item itemvalue="Python.CompareByMANIFEST" />
-        <item itemvalue="Python.AppImportantFileCopyAndMove" />
-        <item itemvalue="Python.GetAPPSize" />
+        <item itemvalue="Python.CompentsAndPermission" />
       </list>
     </recent_temporary>
   </component>
@@ -413,6 +409,11 @@
           <url>file://$PROJECT_DIR$/StaticMethod/CompareByMANIFEST.py</url>
           <line>48</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/StaticMethod/CompentsAndPermission.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -501,13 +502,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StaticMethod/DataProcessAndShow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DynamicMethod/UISimlarityCompare/GetTreePath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1368">
@@ -562,16 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-          <folding>
-            <element signature="e#258#283#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/xml/etree/ElementTree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -589,37 +573,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding>
-            <element signature="e#339#364#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="e#250#275#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/GetXmlInformation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StaticMethod/CompentsAndPermission.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-932">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -644,16 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StaticMethod/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="32" column="47" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="47" />
-          <folding>
-            <element signature="e#269#288#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,32 +635,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StaticMethod/CompentsAndPermissionSimilarity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="46" />
-          <folding>
-            <element signature="e#283#331#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StaticMethod/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-          <folding>
-            <element signature="e#257#303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StaticMethod/AppStaticSimlarity.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1075">
           <caret line="45" column="91" selection-start-line="45" selection-start-column="91" selection-end-line="45" selection-end-column="91" />
           <folding>
             <element signature="e#273#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util/GetAPPSize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1375">
+          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StaticMethod/CompentsAndPermissionSimilarity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="38" />
+          <folding>
+            <element signature="e#283#331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util/StatisticsSimilarityScope.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StaticMethod/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="32" column="47" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="47" />
+          <folding>
+            <element signature="e#269#288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StaticMethod/LogisticRegression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="101" column="46" selection-start-line="101" selection-start-column="46" selection-end-line="101" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StaticMethod/HungarianAlgorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util/GetImageNumber.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="30" selection-end-line="80" selection-end-column="46" />
+          <folding>
+            <element signature="e#286#295#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StaticMethod/CalculateImageHash.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#286#295#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -728,13 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Util/GetAPPSize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1375">
-          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StaticMethod/CalculateWeight.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2550">
@@ -745,44 +733,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StaticMethod/CalculateImageHash.py">
+    <entry file="file://$PROJECT_DIR$/StaticMethod/DataProcessAndShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1075">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="875">
+          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
           <folding>
-            <element signature="e#286#295#0" expanded="true" />
+            <element signature="e#265#284#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Util/GetImageNumber.py">
+    <entry file="file://$PROJECT_DIR$/StaticMethod/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="30" selection-end-line="80" selection-end-column="46" />
+        <state relative-caret-position="750">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
-            <element signature="e#286#295#0" expanded="true" />
+            <element signature="e#257#303#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StaticMethod/LogisticRegression.py">
+    <entry file="file://$PROJECT_DIR$/StaticMethod/CompentsAndPermission.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2525">
-          <caret line="101" column="46" selection-start-line="101" selection-start-column="46" selection-end-line="101" selection-end-column="46" />
+        <state relative-caret-position="825">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StaticMethod/HungarianAlgorithm.py">
+    <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        <state relative-caret-position="625">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding>
+            <element signature="e#339#364#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Util/StatisticsSimilarityScope.py">
+    <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/test2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+        <state relative-caret-position="150">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="e#258#283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <folding>
+            <element signature="e#250#275#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -22,11 +22,11 @@ import DynamicMethod.DynamicUI.test as test
 
 if __name__ == '__main__':
     device_id = 'WTKDU16629012163'  # 荣耀的id
-    # test.test(device_id)
+    test.test(device_id)
     # ele1 =  {1,2,3,4,5}
     # print(ele1.__len__())
 
-    DD.processAppToGetUIXml(device_id)
+    # DD.processAppToGetUIXml(device_id)
     # d = u2.connect(device_id)
     # print(d.info)
     # d.click_post_delay  =10     # 每次点击的等待的时间

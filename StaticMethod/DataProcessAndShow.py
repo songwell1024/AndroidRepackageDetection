@@ -43,8 +43,8 @@ def dataPeocessAndShow(fileName1,fileName2):
         # 资源哈希和组件的组
         fig = plt.figure()
         ax = fig.add_subplot(111)
-        ax.scatter(ycord1, xcord1, s=10, c='red', marker='*')
-        ax.scatter(ycord2, xcord2, s=10, c='green',marker='s')
+        ax.scatter(ycord1, xcord1, s=5, c='red', marker='*')
+        ax.scatter(ycord2, xcord2, s=5, c='green',marker='s')
         plt.xlabel('imghash')
         plt.ylabel('CompPerm')
         plt.show()
@@ -54,9 +54,17 @@ def dataPeocessAndShow(fileName1,fileName2):
         y1 = []
         for i in range(le1):
             y1.append(i)
+
+        le11 = xcord2.__len__()
+        y11 = []
+        for i in range(le11):
+            y11.append(i)
+
         fig = plt.figure()
         ax = fig.add_subplot(111)
-        ax.scatter(y1, xcord1, s=2, c='red')
+        # ax.scatter(y1, xcord1, s=2, c='red')
+        ax.scatter(y1, xcord1, s=2, c='red',marker='*')
+        ax.scatter(y11, xcord2, s=2, c='green',marker='s')
         plt.xlabel('APP')
         plt.ylabel('CompPerm')
         plt.show()
@@ -68,7 +76,9 @@ def dataPeocessAndShow(fileName1,fileName2):
             y2.append(i)
         fig = plt.figure()
         ax = fig.add_subplot(111)
-        ax.scatter(y2, ycord1,s=2, c='red')
+        ax.scatter(y2, ycord1, s=2, c='red')
+        # ax.scatter(y2, ycord1,s=2, c='red',marker='*')
+        # ax.scatter(y2, ycord2, s=2, c='green',marker='s')
         plt.xlabel('APP')
         plt.ylabel('Iamge Hash')
         plt.show()
