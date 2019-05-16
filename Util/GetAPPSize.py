@@ -6,7 +6,7 @@
 @contact: songzhiqwer@gmail.com
 @software: garner
 @file: __init__.py.py
-@time: 2018/12/25/025 21:29
+@time: 2018/5/05/025 21:29
 @desc: 功能函数，用于统计APP的大小
 '''
 
