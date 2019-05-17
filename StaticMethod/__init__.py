@@ -32,6 +32,6 @@ if __name__ == '__main__' :
     # print('执行时间： ' + str((endTime - startTime)) + 's')
 
     #数据的展示
-    fileName1 = r'C:\Users\Song\Desktop\APPVal\AppSimValue.txt'
-    fileName2 = r'C:\Users\Song\Desktop\APPVal\AppNotSimValue.txt'
+    fileName1 = r'C:\Users\Song\Desktop\Data\TrainData\AppSimValue.txt'
+    fileName2 = r'C:\Users\Song\Desktop\Data\TrainData\AppNotSimValue.txt'
     DPAS.dataPeocessAndShow(fileName1,fileName2)

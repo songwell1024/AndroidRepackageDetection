@@ -28,9 +28,15 @@ def ImangeNumStatistics(file_name):
     print(num_0_3 / total)
     print(num_3_7 / total)
     print(num_7_10 / total)
+    # print(num_0_3 / (3212+3369))
+    # print(num_3_7 / (3212+3369))
+    # print(num_7_10 / (3212+3369))
+    print(num_0_3)
+    print(num_3_7)
+    print(num_7_10)
 
 
 
 if __name__ == '__main__':
-    FileName = r'C:\Users\Song\Desktop\APPVal\AppSimValue.txt'
+    FileName =  r'C:\Users\Song\Desktop\Data\TrainData\AppNotSimValue.txt'
     ImangeNumStatistics(FileName)

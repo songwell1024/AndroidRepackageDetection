@@ -19,9 +19,10 @@ from sklearn import svm
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
 from matplotlib import colors
 
-path = r'C:\Users\Song\Desktop\val2\trainData.txt'
+path = r'C:\Users\Song\Desktop\Data\TrainData\train.txt'
 data = np.loadtxt(path)
 
 # x, y = np.split(data, (2,), axis=1)
@@ -33,13 +34,25 @@ x = x_train[:, :2]
 y = y_train
 x_test, y_test = np.split(data, (2,), axis=1)
 
-#clf = svm.SVC(C=1.0, kernel='linear', decision_function_shape='ovr')
-#clf = DecisionTreeClassifier(criterion='entropy', splitter='random', max_depth=7, min_samples_leaf=60, min_samples_split=1200, max_features=2, random_state=10)
-#clf = RandomForestClassifier(criterion='entropy', oob_score='True', n_estimators=600, max_depth=7, min_samples_leaf=60, min_samples_split=1200, max_features=2, random_state=10)
-clf = GradientBoostingClassifier(learning_rate=0.01, n_estimators=600, max_depth=7, min_samples_leaf=60, min_samples_split=1200, max_features=2, subsample=0.7, random_state=10)
-
+clf = svm.SVC(C=1.0, kernel='linear', decision_function_shape='ovr')
+# clf = DecisionTreeClassifier(criterion='entropy', splitter='random', max_depth=7, min_samples_leaf=60, min_samples_split=1200, max_features=2, random_state=10)
+# clf = RandomForestClassifier(criterion='entropy', oob_score='True', n_estimators=600, max_depth=7, min_samples_leaf=60, min_samples_split=1200, max_features=2, random_state=10)
+# clf = GradientBoostingClassifier(learning_rate=0.01, n_estimators=600, max_depth=7, min_samples_leaf=70, min_samples_split=900, max_features=2, subsample=0.7, random_state=10)
+# clf = LogisticRegression(penalty='l2', dual=False, tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_weight=None, random_state=None, solver='liblinear', max_iter=100, multi_class='ovr', verbose=0, warm_start=False, n_jobs=1)
 clf.fit(x_train, y_train.ravel())
 y_hat = clf.predict(x_test)
+######################################
+len1 = y_test.__len__()
+num = 0
+total = 0
+for i in range(len1):
+    if y_hat[i] != y_test[i] and y_hat[i] == 1:
+        num = num + 1
+    if y_test[i] == 0:
+        total = total +1
+print("FPR: ",num /total)
+######################################
+
 print('Accuracy:', metrics.accuracy_score(y_test, y_hat))
 print('Precision:', metrics.precision_score(y_test, y_hat))
 print('Recall:', metrics.recall_score(y_test, y_hat))
@@ -48,8 +61,8 @@ print('F-measure:', metrics.f1_score(y_test, y_hat))
 mpl.rcParams['font.sans-serif'] = [u'SimHei']
 mpl.rcParams['axes.unicode_minus'] = False
 
-x1_min, x1_max = x[:, 0].min(), x[:, 0].max()
-x2_min, x2_max = x[:, 1].min(), x[:, 1].max()
+x1_min, x1_max = x[:, 0].min(), x[:, 0].max()+0.02
+x2_min, x2_max = x[:, 1].min(), x[:, 1].max()+0.02
 x1, x2 = np.mgrid[x1_min:x1_max:200j, x2_min:x2_max:200j]
 grid_test = np.stack((x1.flat, x2.flat), axis=1)
 grid_hat = clf.predict(grid_test)
@@ -60,9 +73,23 @@ plt.ylim(x2_min, x2_max)
 cm_light = mpl.colors.ListedColormap(['#90EE90', '#FFA0A0'])
 cm_dark = mpl.colors.ListedColormap(['g', 'r'])
 plt.pcolormesh(x1, x2, grid_hat, cmap=cm_light)
-plt.scatter(x[:, 0], x[:, 1], c=y.ravel(), s=5, cmap=cm_dark)
-plt.xlabel('X1', fontsize=13)
-plt.ylabel('X2', fontsize=13)
+plt.scatter(x[:, 0], x[:, 1], c=y.ravel(), s=3, cmap=cm_dark)
+plt.xlabel('Image similarity', fontsize=13)
+plt.ylabel('Components and permissions similarity ', fontsize=13)
 # plt.title('重打包二特征分类', fontsize=15)
-plt.grid()
 plt.show()
+
+
+
+# def getFPR(y_test, y_hat):
+#     len1 = y_test.__len__()
+#     num = 0
+#     total = 0
+#     for i in range(len1):
+#         if y_hat[i] != y_test[i] and y_hat[i] == 1:
+#             num = num + 1
+#         if y_test[i] == 1:
+#             total = total +1
+#     return num /total
+
+
