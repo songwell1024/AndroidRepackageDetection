@@ -5,7 +5,7 @@
 @license: (C) Copyright 2013-2018, Node Supply Chain Manager Corporation Limited.
 @contact: songzhiqwer@gmail.com
 @software: garner
-@file: test.py.py
+@file: DeleteRepeat.py.py
 @time: 2018/12/20/020 16:02
 @desc:
 ACS: 所有公共子序列

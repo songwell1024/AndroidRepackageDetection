@@ -24,6 +24,8 @@ from matplotlib import colors
 
 path = r'C:\Users\Song\Desktop\Data\TrainData\train.txt'
 data = np.loadtxt(path)
+path = r'C:\Users\Song\Desktop\Data\TestData\test.txt'
+test_data = np.loadtxt(path)
 
 # x, y = np.split(data, (2,), axis=1)
 # x = x[:, :2]
@@ -32,13 +34,14 @@ data = np.loadtxt(path)
 x_train, y_train = np.split(data, (2,), axis=1)
 x = x_train[:, :2]
 y = y_train
-x_test, y_test = np.split(data, (2,), axis=1)
+x_test, y_test = np.split(test_data, (2,), axis=1)
 
-clf = svm.SVC(C=1.0, kernel='linear', decision_function_shape='ovr')
-# clf = DecisionTreeClassifier(criterion='entropy', splitter='random', max_depth=7, min_samples_leaf=60, min_samples_split=1200, max_features=2, random_state=10)
-# clf = RandomForestClassifier(criterion='entropy', oob_score='True', n_estimators=600, max_depth=7, min_samples_leaf=60, min_samples_split=1200, max_features=2, random_state=10)
-# clf = GradientBoostingClassifier(learning_rate=0.01, n_estimators=600, max_depth=7, min_samples_leaf=70, min_samples_split=900, max_features=2, subsample=0.7, random_state=10)
+
 # clf = LogisticRegression(penalty='l2', dual=False, tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_weight=None, random_state=None, solver='liblinear', max_iter=100, multi_class='ovr', verbose=0, warm_start=False, n_jobs=1)
+# clf = svm.SVC(C=1.0, kernel='linear', decision_function_shape='ovr')
+# clf = DecisionTreeClassifier(criterion='entropy', splitter='random', max_depth=7, min_samples_leaf=70, min_samples_split=900, max_features=2, random_state=10)
+# clf = RandomForestClassifier(criterion='entropy', oob_score='True', n_estimators=600, max_depth=7, min_samples_leaf=70, min_samples_split=900, max_features=2, random_state=10)
+clf = GradientBoostingClassifier(learning_rate=0.01, n_estimators=600, max_depth=7, min_samples_leaf=70, min_samples_split=900, max_features=2, subsample=0.7, random_state=10)
 clf.fit(x_train, y_train.ravel())
 y_hat = clf.predict(x_test)
 ######################################

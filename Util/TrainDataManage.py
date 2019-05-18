@@ -28,8 +28,8 @@ def getTrainData(inputFileName,outFileName):
 
 
 if __name__ == "__main__":
-    inputFileName = r'C:\Users\Song\Desktop\Data\TrainData\AppNotSimValue.txt'
-    outFileName = r'C:\Users\Song\Desktop\Data\TrainData\train.txt'
+    inputFileName = r'C:\Users\Song\Desktop\Data\TestData\AppNotSimData.txt'
+    outFileName = r'C:\Users\Song\Desktop\Data\TestData\test.txt'
     getTrainData(inputFileName,outFileName)
 
 
