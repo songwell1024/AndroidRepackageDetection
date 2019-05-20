@@ -146,9 +146,9 @@ def testData(fileName):
 if __name__ == "__main__":
     fileName = r'C:\Users\Song\Desktop\Data\TrainData\train.txt'  # 文件目录
     testFile = r'C:\Users\Song\Desktop\Data\TestData\test.txt'
-    # threshold, weight ,omissiveJudgementRate, minMisdiagnosisRate = calculateWeight(fileName)
-    # print(threshold, weight ,omissiveJudgementRate, minMisdiagnosisRate)
-    print(testData(testFile))
+    threshold, weight ,omissiveJudgementRate, minMisdiagnosisRate = calculateWeight(fileName)
+    print(threshold, weight ,omissiveJudgementRate, minMisdiagnosisRate)
+    # print(testData(testFile))
     ## thre 0.48
     ## we1 = 0.39
     ## we2 = 0.61

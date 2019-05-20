@@ -38,5 +38,5 @@ def ImangeNumStatistics(file_name):
 
 
 if __name__ == '__main__':
-    FileName =  r'C:\Users\Song\Desktop\Data\TrainData\AppNotSimValue.txt'
+    FileName =  r'C:\Users\Song\Desktop\Data\TrainData\AppSimValue.txt'
     ImangeNumStatistics(FileName)
