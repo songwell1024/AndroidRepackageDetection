@@ -34,9 +34,9 @@ def getALLImageDHash(file_path):
         for fileName in  fileList:
             if fileName.endswith('.jpg') or fileName.endswith('.png'):
                 fileName = path + '\\' + fileName
-                if os.path.getsize(fileName) > 750:
-                    img = Image.open(fileName)
+                if os.path.getsize(fileName) > 800:
                     try:
+                        img = Image.open(fileName)
                         phashVal = imagehash.phash(img)
                         phashVal = str(phashVal)
                         if phashVal != '0000000000000000':

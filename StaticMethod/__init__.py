@@ -10,8 +10,9 @@
 @desc:
 '''
 import StaticMethod.DataProcessAndShow as DPAS
-import StaticMethod.CalculateImageHash as CIH
+# import StaticMethod.CalculateImageHash as CIH
 import StaticMethod.AppStaticSimlarity as ASS
+import datetime
 
 
 def writeToTxt(str,fileName):
@@ -21,17 +22,17 @@ def writeToTxt(str,fileName):
 
 if __name__ == '__main__' :
 
-
-    # ApkFilePath = r'C:\Users\Song\Desktop\aaaa'  # 数据集文件
-    # # OutPutSimFile = r'C:\Users\Song\Desktop\AppSimTxt\AppSimValue.txt'  # APP的相似性文件
-    # startTime = datetime.datetime.now()
+    # ApkFilePath = r'E:\apk\xiaomi\DetectionAPPSet'  # 数据集文件
+    ApkFilePath =  r'E:\APKDownLoad\wandoujia\2'
+    OutPutSimFile = r'C:\Users\sp\Desktop\cmp\myMethod\2\AppSim.txt'  # APP的相似性文件
+    startTime = datetime.datetime.now()
     # CIH.SavePHashValueToTxt(ApkFilePath)   #计算感知哈希
-    # # ASS.readTxtToArrayAndCompareSimilarity(ApkFilePath, OutPutSimFile)  #相似性比较
-    # ASS.readTxtToArrayAndCompareSimilarity(ApkFilePath)  #相似性比较
-    # endTime = datetime.datetime.now()
-    # print('执行时间： ' + str((endTime - startTime)) + 's')
+    # ASS.readTxtToArrayAndCompareSimilarity(ApkFilePath, OutPutSimFile)  #相似性比较
+    ASS.readTxtToArrayAndCompareSimilarity(ApkFilePath,OutPutSimFile)  #相似性比较
+    endTime = datetime.datetime.now()
+    print('执行时间： ' + str((endTime - startTime)) + 's')
 
     #数据的展示
-    fileName1 = r'C:\Users\Song\Desktop\Data\TrainData\AppSimValue.txt'
-    fileName2 = r'C:\Users\Song\Desktop\Data\TrainData\AppNotSimValue.txt'
-    DPAS.dataPeocessAndShow(fileName1,fileName2)
+    # fileName1 = r'C:\Users\Song\Desktop\APPVal\AppSimValue.txt'
+    # fileName2 = r'C:\Users\Song\Desktop\APPVal\AppNotSimValue.txt'
+    # DPAS.dataPeocessAndShow(fileName1,fileName2)

@@ -15,23 +15,23 @@ import os
 from decimal import Decimal
 
 #组件和权限比较相似性
-def compareSimilarityByComponentsAndPermission(fileName1, fileName2):
+def compareSimilarityByComponentsAndPermission(dict1, dict2):
     identical = 0
     similar = 0
     new = 0
     deleted = 0
-    dict1 = {}
-    dict2 = {}
-    similarity = "none"
+    # dict1 = {}
+    # dict2 = {}
+    similarity = "0.0"
 
-    if os.path.exists(fileName1):
-       dict1 = CAP.getElementFrequency(fileName1)
-    else:
-        print("There is no such file--" + fileName1)
-    if os.path.exists(fileName2):
-        dict2 = CAP.getElementFrequency(fileName2)
-    else:
-        print("There is no such file--" + fileName2)
+    # if os.path.exists(fileName1):
+    #    dict1 = CAP.getElementFrequency(fileName1)
+    # else:
+    #     print("There is no such file--" + fileName1)
+    # if os.path.exists(fileName2):
+    #     dict2 = CAP.getElementFrequency(fileName2)
+    # else:
+    #     print("There is no such file--" + fileName2)
     if dict1.__len__() > 0 and dict2.__len__() > 0:
         for key in dict1.keys():
             if dict2.__contains__(key) and dict2[key] == dict1[key]:

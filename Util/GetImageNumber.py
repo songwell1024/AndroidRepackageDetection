@@ -45,7 +45,7 @@ def ImangeNumStatistics(file_name):
     num_900_1000 = 0     #1000>num>900
     num_1000_0 = 0      # num>1000
     for val in DHashVal1:
-        num = val.split(':')[1]
+        num = int(val.strip('\n').split(':')[1])
         if num<= 100:
             num_100 = num_100 +1;
         elif num >100 and num <= 200:
@@ -69,6 +69,18 @@ def ImangeNumStatistics(file_name):
         else:
             num_1000_0 = num_1000_0 + 1
 
+    print("<= 100: " ,num_100)
+    print("100<num<=200 ",num_100_200)
+    print("200<num<=300 ",num_200_300)
+    print("300<num<=400 ",num_300_400)
+    print("400<num<=500 ",num_400_500)
+    print("500<num<=600 ",num_500_600)
+    print("600<num<=700 ",num_600_700)
+    print("700<num<=800 ",num_700_800)
+    print("800<num<=900 ",num_800_900)
+    print("900<num<=1000 ",num_900_1000)
+    print(">1000",num_1000_0)
+
 def writeToTxt(str,fileName):
     f = open(fileName, 'a')   #打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。
     f.write(  str +'\n')  # 这里的\n的意思是在源文件末尾换行，即新加内容另起一行插入。
@@ -76,6 +88,7 @@ def writeToTxt(str,fileName):
 
 
 if __name__ == '__main__':
-    file_path = r'C:\Users\Song\Desktop\APPPath\c1'
-    outFileName = r'C:\Users\Song\Desktop\APPVal\imageNum.txt'
-    getImageNumberOfAPP(file_path,outFileName)
+    # file_path = r'E:\apk\xiaomi\DecompileAPKFile\DetectionAPPSet'
+    outFileName = r'E:\apk\xiaomi\imagenums\imageNum.txt'
+    # getImageNumberOfAPP(file_path,outFileName)
+    ImangeNumStatistics(outFileName)

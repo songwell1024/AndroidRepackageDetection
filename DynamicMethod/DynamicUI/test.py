@@ -5,7 +5,7 @@
 @license: (C) Copyright 2013-2018, Node Supply Chain Manager Corporation Limited.
 @contact: songzhiqwer@gmail.com
 @software: garner
-@file: DeleteRepeat.py
+@file: test.py
 @time: 2018/12/5/005 14:20
 @desc:
 '''

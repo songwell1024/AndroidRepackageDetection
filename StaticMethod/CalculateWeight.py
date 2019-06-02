@@ -13,7 +13,6 @@
 from decimal import Decimal
 import matplotlib.pyplot as plt
 from numpy import *
-import numpy as  np
 
 
 def calculateWeight(fileName):
@@ -98,7 +97,6 @@ def calculateWeight(fileName):
         if labelMat[i] == 0 and label == 1:  # 误报的
             xcord3.append(dataMat[i][0])
             ycord3.append(dataMat[i][1])
-    print(xcord3.__len__())
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -109,46 +107,11 @@ def calculateWeight(fileName):
     y = (threshold - weight * x) / (1-weight)
     ax.plot(x, y)
     plt.show()
-    plt.xlabel('Image similarity', fontsize=13)
-    plt.ylabel('Components and permissions similarity ', fontsize=13)
 
     return threshold, weight, omissiveJudgementRate, minMisdiagnosisRate
 
 
-
-
-def testData(fileName):
-    RepackagedError = 0  #重打包检测为非重打包
-    NonRepackaedError = -30  #非重打包检测为重打包
-    RepackagedTrue = 0  ##重打包检测为重打包
-    NonRepackaedTrue = 30  # 非重打包检测为非重打包
-    fr = open(fileName)
-    for line in fr.readlines():
-        lineArr = line.strip().split()
-        if (float(lineArr[0]) * 0.39 + float(lineArr[1]) * 0.61) <= 0.48 and  int(lineArr[2]) == 1:
-            RepackagedError = RepackagedError +1
-            # print(lineArr)
-        elif (float(lineArr[0]) * 0.39 + float(lineArr[1]) * 0.61) > 0.48 and  int(lineArr[2]) == 0:
-            NonRepackaedError = NonRepackaedError + 1
-            # print(lineArr)
-        elif (float(lineArr[0]) * 0.39 + float(lineArr[1]) * 0.61) > 0.48 and  int(lineArr[2]) == 1:
-            RepackagedTrue = RepackagedTrue + 1
-        elif (float(lineArr[0]) * 0.39 + float(lineArr[1]) * 0.61) <= 0.48 and  int(lineArr[2]) == 0:
-            NonRepackaedTrue = NonRepackaedTrue + 1
-    print("FPR: ", NonRepackaedError / (NonRepackaedError + NonRepackaedTrue))
-    ######################################
-
-    print('Accuracy:', (RepackagedTrue + NonRepackaedTrue)/(RepackagedError + NonRepackaedError + RepackagedTrue + NonRepackaedTrue ))
-    print('Precision:', RepackagedTrue/(RepackagedTrue + NonRepackaedError))
-    print('Recall:',RepackagedTrue /(RepackagedError + RepackagedTrue))
-    return RepackagedError,NonRepackaedError,RepackagedTrue,NonRepackaedTrue
-
 if __name__ == "__main__":
-    fileName = r'C:\Users\Song\Desktop\Data\TrainData\train.txt'  # 文件目录
-    testFile = r'C:\Users\Song\Desktop\Data\TestData\test.txt'
+    fileName = r'C:\Users\Song\Desktop\val2\trainData.txt'  # 文件目录
     threshold, weight ,omissiveJudgementRate, minMisdiagnosisRate = calculateWeight(fileName)
     print(threshold, weight ,omissiveJudgementRate, minMisdiagnosisRate)
-    # print(testData(testFile))
-    ## thre 0.48
-    ## we1 = 0.39
-    ## we2 = 0.61

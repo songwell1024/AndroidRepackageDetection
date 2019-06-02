@@ -79,12 +79,15 @@ def copyAndMove(inPath, outPath):
         try:
             shutil.copy(MANIFESTFileName, outAppPath)
         except:
-            print("there is no such file:" + AndroidManifestFileName)
+            print("there is no such file:" + MANIFESTFileName)
         res_layout = inPath + '\\' + path + '\\' + "res" + "\\" + "layout"
-        copytree(res_layout, outAppPath + '\\' + "res" + "\\" + "layout")
+        try:
+            copytree(res_layout, outAppPath + '\\' + "res" + "\\" + "layout")
+        except:
+            print("there is no such file:" + res_layout)
 
 
 if __name__ == '__main__':
-    inPath = r'C:\Users\Song\Desktop\Aaaaaaaaaaaa'
-    outPath = r'C:\Users\Song\Desktop\APPPath'
+    inPath = r'E:\apk\xiaomi\DecompileAPKFile'
+    outPath = r'E:\apk\xiaomi\DetectionAPPSet'
     copyAndMove(inPath, outPath)

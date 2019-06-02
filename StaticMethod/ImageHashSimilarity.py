@@ -15,26 +15,26 @@ from decimal import Decimal
 
 
 #比较图片资源哈希的值的汉明距离
-def compareImgSimilarity(fileName1, fileName2):
-    DHashVal1 = []
-    DHashVal2 = []
-    if os.path.exists(fileName1):
-        f = open(fileName1)
-        DHashVal1 = f.readlines()
-        f.close()
-    else:
-        print("There is no such file--" + fileName1)  #看下出问题的文件夹
-    if os.path.exists(fileName2):
-        f = open(fileName2)
-        DHashVal2 = f.readlines()
-        f.close()
-    else:
-        print("There is no such file--" + fileName2)
+def compareImgSimilarity(DHashVal1, DHashVal2):
+    # DHashVal1 = []
+    # DHashVal2 = []
+    # if os.path.exists(fileName1):
+    #     f = open(fileName1)
+    #     DHashVal1 = f.readlines()
+    #     f.close()
+    # else:
+    #     print("There is no such file--" + fileName1)  #看下出问题的文件夹
+    # if os.path.exists(fileName2):
+    #     f = open(fileName2)
+    #     DHashVal2 = f.readlines()
+    #     f.close()
+    # else:
+    #     print("There is no such file--" + fileName2)
     nx = []
     edge = {}
     cx = {}
     key_index = 0
-    simRes = "none"
+    simRes = "0.0"
     if DHashVal1.__len__() > 0 and DHashVal2.__len__() > 0:
         for hashVal1 in DHashVal1:
             hashVal1 = hashVal1.strip('\n')
@@ -69,7 +69,7 @@ def compareImgSimilarity(fileName1, fileName2):
         #四舍五入
         simRes =str(float(Decimal(simRes).quantize(Decimal('0.000'))))
     else:
-        simRes = 1     #如果没有任何的资源文件直接判定为可疑重打包应用
+        simRes = 0     #如果没有任何的资源文件直接判定为可疑重打包应用
     return str(simRes)
 
 

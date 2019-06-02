@@ -22,34 +22,39 @@ def decompileAPk(apkPath,outputPath,threadNum):
     childNum = 0
     if apkList.__len__() >0:
         for APK in apkList:
-            portion = os.path.splitext(APK)  # 将apk文件按照它们的文件名和后缀做一个分割
-            apkOutPath = os.path.join(outputPath, portion[0])  # portion 中 存储的是apk的文件名
-            APK = os.path.join(apkPath , APK)
-            if not os.path.exists(apkOutPath):
-               os.makedirs(apkOutPath)
+            try:
+                portion = os.path.splitext(APK)  # 将apk文件按照它们的文件名和后缀做一个分割
+                apkOutPath = os.path.join(outputPath, portion[0])  # portion 中 存储的是apk的文件名
+                APK = os.path.join(apkPath , APK)
+                if not os.path.exists(apkOutPath):
+                   os.makedirs(apkOutPath)
 
-            APK = '"' + APK + '"'
-            apkOutPath = '"' + apkOutPath  + '"'
-            cmd = "apktool d -f {0} -o {1}".format(APK, apkOutPath)  # 反编译出来apk 之后按照文件名在存储
-            #os.system(cmd)
-            #subprocess.run(cmd, shell=True)
-            # 开启多个线程执行,
-            child = subprocess.Popen(cmd, shell=True, close_fds=True)
-            childNum = childNum + 1
-            print("A APk is decompiling")
-            if childNum == threadNum:
-                child.wait()
-                childNum = 0
-        while child.poll() is None:
-            print("please wait~")
-            time.sleep(10)
+                APK = '"' + APK + '"'
+                apkOutPath = '"' + apkOutPath  + '"'
+                cmd = "apktool d -f {0} -o {1}".format(APK, apkOutPath)  # 反编译出来apk 之后按照文件名在存储
+                #os.system(cmd)
+                #subprocess.run(cmd, shell=True)
+                # 开启多个线程执行,
+                child = subprocess.Popen(cmd, shell=True, close_fds=True)
+                childNum = childNum + 1
+                print("A APk is decompiling")
+                if childNum == threadNum:
+                    child.wait()
+                    time.sleep(20)
+                    childNum = 0
+                # while child.poll() is None:
+                #     print("please wait~")
+                #     time.sleep(180)
+            except:
+                print("error  in " + APK)
+                time.sleep(60)
     print("All work done! Happy everyday~")
 
 if __name__ == '__main__':
-    APKOutPath = r'C:\Users\Administrator\Desktop\DecompileAPKFile'
-    file_path = file_path = r'C:\Users\Administrator\Desktop\DataSet'
-    file_path_lists = os.listdir(file_path)
-    for path in file_path_lists:
-        outPath = APKOutPath + '\\' + path
-        path = file_path + '\\' + path
-        decompileAPk(path, outPath, 2)
+    APKOutPath = r'E:\apk\xiaomi\DecompileAPKFile'
+    file_path = r'E:\apk\xiaomi\7'
+    # file_path_lists = os.listdir(file_path)
+    # for path in file_path_lists:
+    #     outPath = APKOutPath + '\\' + path
+    #     path = file_path + '\\' + path
+    decompileAPk(file_path, APKOutPath, 2)

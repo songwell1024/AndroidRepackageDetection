@@ -24,14 +24,14 @@ def walkData(root_node, parent_node_id, tree):
         return
     if parent_node_id == "":
         if root_node.tag == 'include':
-            root_node_id = root_node.tag +':'+ root_node.attrib['layout'] + str(index_node)
+            root_node_id = root_node.tag +':'+ root_node.attrib['layout'] + ".xml" + str(index_node)
             tree.create_node(root_node.tag,root_node_id)
         else:
             root_node_id = root_node.tag + str(index_node)
             tree.create_node(root_node.tag, root_node_id)
     else:
         if root_node.tag == 'include':
-            root_node_id = root_node.tag +':'+ root_node.attrib['layout'] + str(index_node)
+            root_node_id = root_node.tag +':'+ root_node.attrib['layout'] + ".xml" + str(index_node)
             tree.create_node(root_node.tag,root_node_id, parent = parent_node_id)
         else:
             root_node_id = root_node.tag + str(index_node)
@@ -84,7 +84,7 @@ def addIncludeXMlTree(treePaths_list, filePath):
     resTreePathsList = []
     for treePath in treePaths_list:
         if treePath[treePath.__len__()-1].__contains__('include'):
-            IncludeXMLFileName = filePath + "\\" + treePath[treePath.__len__()-1].split('/')[1] + '.xml'
+            IncludeXMLFileName = filePath + "\\" + treePath[treePath.__len__()-1].split('/')[1]
             includeTreePaths = getAllSubPathOfTree(IncludeXMLFileName)
             for itp in  includeTreePaths:
                 help = []
