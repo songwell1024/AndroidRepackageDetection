@@ -27,39 +27,46 @@ def StaticUISimilarityCompareByXMLTree(AppSimFile,file_path, scoreTxt,APPSimText
     apkList = f.readlines()
     for path in apkList:
         apkHelp = path.split(':')[0]
+        scoreHelp = path.split(':')[1]
+        score = scoreHelp.split(' ')[-1].strip('\n')
+
         # print(apkHelp)
         apk = apkHelp.split(',')
         apkName1 = apk[0]
         apkName2 = apk[1]
-
-        xml_paths1 = file_path + '\\' + apkName1 + '\\' + "res" + '\\' + "layout"
-        xml_paths2 = file_path + '\\' + apkName2 + '\\' + "res" + '\\' + "layout"
-        try:
-            xml_list1 = os.listdir(xml_paths1)
-        except:
-            xml_list1 = []
-            writeToTxt(apkHelp,ProblemTxt)
-            # print(apkName1)
-        try:
-            xml_list2 = os.listdir(xml_paths2)
-        except:
-            xml_list2 = []
-            writeToTxt(apkHelp, ProblemTxt)
-            # print(apkName2)
-        if xml_list1.__len__() == 0 or xml_list2.__len__() == 0 :
-            continue
-        if (xml_list1.__len__() <= 200 or xml_list2.__len__() <= 200)\
-            and ((xml_list1.__len__()* 3) < (xml_list2.__len__())\
-                or xml_list1.__len__() > (xml_list2.__len__() * 3)):
-            continue
-        if (xml_list1.__len__() > 200 and xml_list2.__len__() > 200)\
-            and ((xml_list1.__len__() + 200) < (xml_list2.__len__())\
-                or xml_list1.__len__() > (xml_list2.__len__() + 200)):
-            continue
-        if (xml_list1.__len__() > 1000 and xml_list2.__len__() > 1000):
-            print(apkHelp)
-            continue
-        CompareXmlTree(xml_list1, xml_list2, xml_paths1, xml_paths2, apkName1, apkName2, APPSimText, scoreTxt)
+        if float(score) > 0.95:
+            score =  str(float(Decimal(score).quantize(Decimal('0.000'))))
+            res = apkName1 + "," + apkName2 + ":" + score
+            writeToTxt(res, APPSimText)  # 将相似性写入文件
+        else:
+            xml_paths1 = file_path + '\\' + apkName1 + '\\' + "res" + '\\' + "layout"
+            xml_paths2 = file_path + '\\' + apkName2 + '\\' + "res" + '\\' + "layout"
+            try:
+                xml_list1 = os.listdir(xml_paths1)
+            except:
+                xml_list1 = []
+                writeToTxt(apkHelp,ProblemTxt)
+                # print(apkName1)
+            try:
+                xml_list2 = os.listdir(xml_paths2)
+            except:
+                xml_list2 = []
+                writeToTxt(apkHelp, ProblemTxt)
+                # print(apkName2)
+            if xml_list1.__len__() == 0 or xml_list2.__len__() == 0 :
+                continue
+            if (xml_list1.__len__() <= 200 or xml_list2.__len__() <= 200)\
+                and ((xml_list1.__len__()* 3) < (xml_list2.__len__())\
+                    or xml_list1.__len__() > (xml_list2.__len__() * 3)):
+                continue
+            if (xml_list1.__len__() > 200 and xml_list2.__len__() > 200)\
+                and ((xml_list1.__len__() + 200) < (xml_list2.__len__())\
+                    or xml_list1.__len__() > (xml_list2.__len__() + 200)):
+                continue
+            if (xml_list1.__len__() > 1000 and xml_list2.__len__() > 1000):
+                print(apkHelp)
+                continue
+            CompareXmlTree(xml_list1, xml_list2, xml_paths1, xml_paths2, apkName1, apkName2, APPSimText, scoreTxt)
 
 def CompareXmlTree(xml_list1,xml_list2,xml_paths1,xml_paths2,apkName1,apkName2,APPSimText,scoreTxt):
     nx = []
@@ -136,9 +143,9 @@ if __name__ == '__main__':
     # filename = r'C:\Users\Song\Desktop\AppXml\com.mydream.wifi\test.xml'
     # treePath = GTP.getAllSubPathOfTree(filename)
     # print(treePath)
-    AppSimFile = r'E:\APKDataSet\XiaoMiResults\MyMethods\Original\6\AppSim.txt'
-    file_path = r'E:\APKDataSet\xiaomiAPK\DecompileAPK\6'
-    scoreTxt = r'E:\APKDataSet\XiaoMiResults\MyMethods\Final\6\scoreTxt.txt'  # 相似性得分
-    SimTxt = r'E:\APKDataSet\XiaoMiResults\MyMethods\Final\6\sim.txt'   #重打包应用
-    ProblemTxt = r'E:\APKDataSet\XiaoMiResults\MyMethods\Final\6\problem.txt'
+    AppSimFile = r'E:\APKDataSet\XiaoMiResults\MyMethods\Original\7\2.txt'
+    file_path = r'E:\APKDataSet\xiaomiAPK\DecompileAPK\7'
+    scoreTxt = r'E:\APKDataSet\XiaoMiResults\MyMethods\Final\77\scoreTxt.txt'  # 相似性得分
+    SimTxt = r'E:\APKDataSet\XiaoMiResults\MyMethods\Final\77\sim.txt'   #重打包应用
+    ProblemTxt = r'E:\APKDataSet\XiaoMiResults\MyMethods\Final\77\problem.txt'
     StaticUISimilarityCompareByXMLTree(AppSimFile,file_path,scoreTxt,SimTxt,ProblemTxt)
