@@ -29,5 +29,8 @@ def moveRepeat(filePath):
 
 
 if __name__ == "__main__":
-    filePath = r'F:\DeAPK\5'
+
+    filePath = r'E:\APKDataSet\wandoujiaAPK\Decompile\1'
     moveRepeat(filePath)
+    filePath2 = r'E:\APKDataSet\wandoujiaAPK\Decompile\2'
+    moveRepeat(filePath2)

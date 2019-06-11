@@ -88,7 +88,7 @@ def writeToTxt(str,fileName):
 
 
 if __name__ == '__main__':
-    # file_path = r'E:\apk\xiaomi\DecompileAPKFile\DetectionAPPSet'
-    outFileName = r'E:\apk\xiaomi\imagenums\imageNum.txt'
-    # getImageNumberOfAPP(file_path,outFileName)
+    file_path = r'E:\APKDataSet\wandoujiaAPK\Decompile\7'
+    outFileName = r'E:\APKDataSet\wandoujiaAPK\imagesnums\7\imageNum.txt'
+    getImageNumberOfAPP(file_path,outFileName)
     ImangeNumStatistics(outFileName)

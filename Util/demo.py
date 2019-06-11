@@ -10,7 +10,12 @@ def test():
 
 
 if __name__ == '__main__':
-    try:
-        print(test())
-    except:
-        print("aaaaaaaaaaaaa")
+    listTest = []
+    listTest.append(1)
+    listTest.append(3)
+    listTest.append(2)
+    for i in listTest:
+        print(i)
+    listTest.remove(2)
+    for i in listTest:
+        print(i)

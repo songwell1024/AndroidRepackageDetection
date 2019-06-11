@@ -25,64 +25,30 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StaticMethod/__init__.py">
+        <entry file="file://$PROJECT_DIR$/Util/GetImageNumber.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-              <folding>
-                <element signature="e#257#303#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2200">
+              <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StaticUICompareByXMLTree/StaticUISimilarityCompareByXMLTree.py">
+        <entry file="file://$PROJECT_DIR$/Util/GetAPPSize.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="27" />
+            <state relative-caret-position="443">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Util/AndroguardSimCompare.py">
+        <entry file="file://$PROJECT_DIR$/Util/CompareXmlFileNums.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1262">
-              <caret line="67" column="78" selection-start-line="67" selection-start-column="78" selection-end-line="67" selection-end-column="78" />
+            <state relative-caret-position="480">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
-                <element signature="e#346#355#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Util/FSquaDRAMasterVerify.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-188" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Util/FSquaDRA-master.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Util/AppNotSimManage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-752" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Util/demo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,7 +75,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/StaticMethod/LRTrainDataProcess.py" />
         <option value="$PROJECT_DIR$/StaticMethodBackUp/DataProcessAndShow.py" />
         <option value="$PROJECT_DIR$/StaticMethodBackUp/LogisticRegression.py" />
         <option value="$PROJECT_DIR$/StaticMethod/test.py" />
@@ -146,13 +111,10 @@
         <option value="$PROJECT_DIR$/StaticMethod/AppImportantFileCopyAndMove.py" />
         <option value="$PROJECT_DIR$/StaticMethod/CalculateImageHash.py" />
         <option value="$PROJECT_DIR$/DecompileAPK/DecompileAPK.py" />
-        <option value="$PROJECT_DIR$/Util/GetAPPSize.py" />
         <option value="$PROJECT_DIR$/Util/APKMove.py" />
         <option value="$PROJECT_DIR$/StaticMethod/CompentsAndPermissionSimilarity.py" />
-        <option value="$PROJECT_DIR$/Util/GetImageNumber.py" />
         <option value="$PROJECT_DIR$/StaticMethod/ImageHashSimilarity.py" />
         <option value="$PROJECT_DIR$/StaticMethod/AppStaticSimlarity.py" />
-        <option value="$PROJECT_DIR$/Util/MoveRepeat.py" />
         <option value="$PROJECT_DIR$/StaticMethod/__init__.py" />
         <option value="$PROJECT_DIR$/Util/FSquaDRA-master.py" />
         <option value="$PROJECT_DIR$/Util/FSquaDRAMasterVerify.py" />
@@ -160,6 +122,10 @@
         <option value="$PROJECT_DIR$/StaticUICompareByXMLTree/StaticUISimilarityCompareByXMLTree.py" />
         <option value="$PROJECT_DIR$/Util/demo.py" />
         <option value="$PROJECT_DIR$/Util/AndroguardSimCompare.py" />
+        <option value="$PROJECT_DIR$/Util/MoveRepeat.py" />
+        <option value="$PROJECT_DIR$/Util/GetImageNumber.py" />
+        <option value="$PROJECT_DIR$/Util/GetAPPSize.py" />
+        <option value="$PROJECT_DIR$/Util/CompareXmlFileNums.py" />
       </list>
     </option>
   </component>
@@ -174,6 +140,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,6 +156,17 @@
             <path>
               <item name="3" type="b2602c69:ProjectViewProjectNode" />
               <item name="3" type="462c0819:PsiDirectoryNode" />
+              <item name="DynamicMethod" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="3" type="462c0819:PsiDirectoryNode" />
+              <item name="DynamicMethod" type="462c0819:PsiDirectoryNode" />
+              <item name="DynamicUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="3" type="462c0819:PsiDirectoryNode" />
               <item name="StaticUICompareByXMLTree" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -200,12 +178,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -232,7 +209,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.AndroguardSimCompare">
+  <component name="RunManager" selected="Python.CompareXmlFileNums">
     <configuration name="AndroguardSimCompare" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AndroidReapckedDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -255,7 +232,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="FSquaDRAMasterVerify" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="CompareXmlFileNums" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AndroidReapckedDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -267,8 +244,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/FSquaDRAMasterVerify.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/CompareXmlFileNums.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -277,51 +253,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="StaticUISimilarityCompareByXMLTree" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AndroidReapckedDetection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/StaticUICompareByXMLTree" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StaticUICompareByXMLTree/StaticUISimilarityCompareByXMLTree.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AndroidReapckedDetection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/StaticMethod" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StaticMethod/__init__.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="GetAPPSize" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AndroidReapckedDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -333,7 +265,49 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/demo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/GetAPPSize.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GetImageNumber" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AndroidReapckedDetection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Util" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/GetImageNumber.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MoveRepeat" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AndroidReapckedDetection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Util" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/MoveRepeat.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -344,18 +318,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.AndroguardSimCompare" />
-      <item itemvalue="Python.FSquaDRAMasterVerify" />
-      <item itemvalue="Python.StaticUISimilarityCompareByXMLTree" />
-      <item itemvalue="Python.__init__" />
-      <item itemvalue="Python.demo" />
+      <item itemvalue="Python.GetImageNumber" />
+      <item itemvalue="Python.MoveRepeat" />
+      <item itemvalue="Python.GetAPPSize" />
+      <item itemvalue="Python.CompareXmlFileNums" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.CompareXmlFileNums" />
+        <item itemvalue="Python.GetAPPSize" />
+        <item itemvalue="Python.GetImageNumber" />
+        <item itemvalue="Python.MoveRepeat" />
         <item itemvalue="Python.AndroguardSimCompare" />
-        <item itemvalue="Python.demo" />
-        <item itemvalue="Python.StaticUISimilarityCompareByXMLTree" />
-        <item itemvalue="Python.FSquaDRAMasterVerify" />
-        <item itemvalue="Python.__init__" />
       </list>
     </recent_temporary>
   </component>
@@ -381,13 +355,13 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17997465" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15019011" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32974428" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49936628" weight="0.3781965" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49936628" weight="0.41184387" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49936628" weight="0.33243608" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49936628" weight="0.36877525" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -427,24 +401,20 @@
           <line>35</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Util/AndroguardSimCompare.py</url>
+          <line>88</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Util/GetImageNumber.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DynamicMethod/DTW_ACS/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DynamicMethod/DTW_ACS/ACS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-506">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StaticMethod/DataProcessAndShow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -477,13 +447,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/xml/etree/ElementTree.py" />
-    <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/DynamicGetUIXml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="219" column="70" lean-forward="true" selection-start-line="219" selection-start-column="70" selection-end-line="219" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/demo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -495,13 +458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/GetXmlInformation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -529,13 +485,6 @@
     </entry>
     <entry file="file://G:/Anaconda/Lib/genericpath.py" />
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-508546296/time.py" />
-    <entry file="file://$PROJECT_DIR$/Util/GetAPPSize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StaticMethod/CalculateWeight.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
@@ -571,13 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Util/GetImageNumber.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2484">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StaticMethod/CalculateImageHash.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="805">
@@ -595,7 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Util/MoveRepeat.py" />
     <entry file="file://$PROJECT_DIR$/StaticUICompareByXMLTree/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -673,16 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StaticMethod/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding>
-            <element signature="e#257#303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/eventlet/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
@@ -697,42 +628,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/StaticMethod/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding>
+            <element signature="e#257#303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util/FSquaDRAMasterVerify.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util/FSquaDRA-master.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util/AppNotSimManage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Util/demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        <state relative-caret-position="325">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Util/FSquaDRAMasterVerify.py">
+    <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/GetXmlInformation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-188" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Util/FSquaDRA-master.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Util/AppNotSimManage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-752" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StaticUICompareByXMLTree/StaticUISimilarityCompareByXMLTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="27" />
+        <state relative-caret-position="450">
+          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Util/AndroguardSimCompare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1262">
-          <caret line="67" column="78" selection-start-line="67" selection-start-column="78" selection-end-line="67" selection-end-column="78" />
+        <state relative-caret-position="421">
+          <caret line="106" column="15" lean-forward="true" selection-start-line="64" selection-start-column="3" selection-end-line="106" selection-end-column="15" />
           <folding>
-            <element signature="e#346#355#0" expanded="true" />
+            <element signature="e#347#356#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DynamicMethod/DynamicUI/DynamicGetUIXml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StaticUICompareByXMLTree/StaticUISimilarityCompareByXMLTree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="41" column="85" lean-forward="true" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="85" />
+          <folding>
+            <element signature="e#268#310#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util/MoveRepeat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util/GetImageNumber.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2200">
+          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util/GetAPPSize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/encodings/utf_8_sig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util/CompareXmlFileNums.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

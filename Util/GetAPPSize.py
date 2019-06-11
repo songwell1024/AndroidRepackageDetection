@@ -89,5 +89,5 @@ def getAppSize(filePath):
 
 
 if __name__ == '__main__':
-    filePath = r'E:\apk\xiaomi\18'    # APP的路径
+    filePath = r'E:\APKDataSet\wandoujiaAPK\77777'    # APP的路径
     getAppSize(filePath)
